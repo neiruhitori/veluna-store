@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Informasi layanan Roblox Gift in Game di Veluna Store.">
   <title>Roblox GIG - Veluna Store</title>
+  <link rel="icon" type="image/png" href="image/iconvelunabulat.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -14,7 +15,7 @@
 <body>
   <header class="site-header">
     <div class="header-top page-width">
-      <a class="brand" href="index.html" aria-label="Veluna Store beranda">VELUNA<span>STORE</span></a>
+      <a class="brand" href="index.html" aria-label="Veluna Store beranda"><img class="brand-mark" src="image/iconveluna.png" alt="">VELUNA<span>STORE</span></a>
       <form class="search" role="search" action="index.html" method="get">
         <label class="sr-only" for="site-search">Cari produk</label>
         <input id="site-search" type="search" name="q" placeholder="Cari produk favoritmu..." autocomplete="off">
@@ -27,9 +28,8 @@
     <nav class="main-nav page-width" aria-label="Navigasi utama">
       <a href="index.html">Beranda</a>
       <a class="active" href="index.html#produk">Produk</a>
-      <a href="index.html#kategori">Kategori</a>
       <a href="index.html#tentang">Tentang Kami</a>
-      <a href="index.html#bantuan">Bantuan</a>
+      <a href="#cara-order" data-order-guide>Cara Order</a>
     </nav>
   </header>
 
@@ -56,7 +56,7 @@
   <footer class="site-footer">
     <div class="footer-main page-width">
       <div class="footer-about">
-        <a class="brand footer-brand" href="index.html">VELUNA<span>STORE</span></a>
+        <a class="brand footer-brand" href="index.html"><img class="brand-mark" src="image/iconvelunabulat.png" alt="">VELUNA<span>STORE</span></a>
         <p>Temukan produk pilihan dan pengalaman belanja yang menyenangkan hanya di Veluna Store.</p>
         <div class="social-links" aria-label="Media sosial"><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="TikTok">tk</a><a href="#" aria-label="Facebook">fb</a></div>
       </div>
@@ -66,7 +66,7 @@
       </div>
       <div class="footer-column">
         <h2>Bantuan</h2>
-        <a href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi kami</a><a href="index.html#bantuan">Cara berbelanja</a><a href="index.html#bantuan">FAQ</a>
+        <a href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi kami</a><a href="#cara-order" data-order-guide>Cara Order</a>
       </div>
       <div class="footer-column newsletter">
         <h2>Kabar Veluna</h2>
@@ -76,5 +76,6 @@
     </div>
     <div class="footer-bottom page-width"><p>© 2026 Veluna Store. Hak cipta dilindungi.</p><p>Dibuat dengan sepenuh hati <span aria-hidden="true">♡</span></p></div>
   </footer>
+  <script src="order-guide.js"></script>
 </body>
 </html>

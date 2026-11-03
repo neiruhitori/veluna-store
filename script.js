@@ -205,3 +205,79 @@ if (robloxMethodDialog) {
     if (event.target === robloxMethodDialog) robloxMethodDialog.close();
   });
 }
+
+const velunaAboutDialog = document.querySelector("[data-veluna-about-dialog]");
+const velunaAboutTriggers = document.querySelectorAll("[data-veluna-about-open]");
+
+if (velunaAboutDialog) {
+  const closeButtons = velunaAboutDialog.querySelectorAll("[data-veluna-about-close]");
+  const storyPage = velunaAboutDialog.querySelector('[data-about-page="story"]');
+  const welcomePage = velunaAboutDialog.querySelector('[data-about-page="welcome"]');
+  const nextButton = velunaAboutDialog.querySelector("[data-about-next]");
+  const welcomeNextButton = velunaAboutDialog.querySelector("[data-welcome-next]");
+  const backButton = velunaAboutDialog.querySelector("[data-about-back]");
+  const welcomeTitle = velunaAboutDialog.querySelector("#about-welcome-title");
+  const welcomeMessage = velunaAboutDialog.querySelector("[data-welcome-message]");
+  const welcomeSteps = Array.from(velunaAboutDialog.querySelectorAll("[data-welcome-step]"));
+  const welcomeMessages = [
+    "Senang kamu mampir dan mengenal cerita kami. Semoga kamu menemukan hal digital yang kamu cari di sini.",
+    "Perjalanan VélunaID dimulai dari gift in-game Roblox, tumbuh lewat Robux, dan kini menjangkau lebih banyak produk digital.",
+    "Semoga pengalaman belanjamu di Veluna terasa aman, ramah, dan nggak ribet. Yuk, jelajahi pilihan yang sudah kami siapkan!",
+  ];
+  let welcomeStep = 0;
+
+  const showStoryPage = () => {
+    storyPage.hidden = false;
+    welcomePage.hidden = true;
+    welcomeStep = 0;
+    velunaAboutDialog.setAttribute("aria-labelledby", "about-dialog-title");
+  };
+
+  velunaAboutTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      showStoryPage();
+      velunaAboutDialog.showModal();
+    });
+  });
+
+  closeButtons.forEach((button) => {
+    button.addEventListener("click", () => velunaAboutDialog.close());
+  });
+  nextButton.addEventListener("click", () => {
+    storyPage.hidden = true;
+    welcomePage.hidden = false;
+    velunaAboutDialog.setAttribute("aria-labelledby", "about-welcome-title");
+    welcomeStep = 0;
+    welcomeMessage.textContent = welcomeMessages[welcomeStep];
+    welcomeSteps.forEach((step, index) => {
+      step.classList.toggle("is-current", index === welcomeStep);
+    });
+    welcomeNextButton.innerHTML = 'Lanjutkan cerita <span aria-hidden="true">→</span>';
+    welcomePage.style.animation = "about-page-enter 280ms ease both";
+    welcomeTitle.focus();
+  });
+  welcomeNextButton.addEventListener("click", () => {
+    if (welcomeStep === welcomeMessages.length - 1) {
+      velunaAboutDialog.close();
+      return;
+    }
+
+    welcomeStep += 1;
+    welcomeMessage.textContent = welcomeMessages[welcomeStep];
+    welcomeSteps.forEach((step, index) => {
+      step.classList.toggle("is-current", index === welcomeStep);
+    });
+    welcomeNextButton.innerHTML =
+      welcomeStep === welcomeMessages.length - 1
+        ? 'Kembali ke toko <span aria-hidden="true">♡</span>'
+        : 'Lanjutkan cerita <span aria-hidden="true">→</span>';
+  });
+  backButton.addEventListener("click", () => {
+    showStoryPage();
+    nextButton.focus();
+  });
+  velunaAboutDialog.addEventListener("click", (event) => {
+    if (event.target === velunaAboutDialog) velunaAboutDialog.close();
+  });
+  velunaAboutDialog.addEventListener("close", showStoryPage);
+}

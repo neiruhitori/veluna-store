@@ -5,6 +5,7 @@
 
 .roblox-banner { position: relative; min-height: 235px; display: flex; align-items: center; overflow: hidden; border: 1px solid rgb(86 132 184 / 17%); border-radius: 12px; background: linear-gradient(110deg, #dceaf7 0%, #e8eef8 50%, #f8e6ed 100%); isolation: isolate; }
 .roblox-banner::before { position: absolute; z-index: -1; inset: -16px; background: linear-gradient(110deg, rgb(220 234 247 / 58%), rgb(232 238 248 / 55%) 50%, rgb(248 230 237 / 58%)), url("image/iconroblox.png") no-repeat 88% 50% / 280px; content: ""; filter: blur(1px) saturate(.78); opacity: .72; }
+.roblox-banner::after { position: absolute; z-index: -1; inset: -12px; background: url("image/iconvelunabanner.png") no-repeat left 8% center / 360px auto; content: ""; filter: blur(1.5px) saturate(.68); opacity: .2; }
 .vilog-banner { background: linear-gradient(110deg, #e6e9f8 0%, #e9eef8 50%, #f8e6ed 100%); }
 .vilog-banner .roblox-symbol { color: #806da7; }
 .vilog-cover { background: linear-gradient(145deg, #e8e8f7, #f8e9ef); }
@@ -30,6 +31,7 @@
 .game-cover .image-label { position: absolute; right: 3px; bottom: 5px; left: 3px; color: #8193a6; font-size: 7px; text-align: center; }
 .ml-banner { background: linear-gradient(110deg, #dceaf7 0%, #e8eff8 50%, #f8e6ed 100%); }
 .ml-banner::before { background-image: linear-gradient(110deg, rgb(220 234 247 / 56%), rgb(232 239 248 / 52%) 50%, rgb(248 230 237 / 56%)), url("image/iconml.png"); background-position: center, 88% 50%; background-size: auto, 330px; filter: blur(1.5px) saturate(.72); opacity: .76; }
+.ml-banner::after { background-position: left 8% center; }
 .ml-page-mark { width: 92px; height: 92px; border-radius: 24px; font-size: 31px; }
 .ml-page-mark.game-logo { border-radius: 20px; box-shadow: 0 14px 35px rgb(54 95 141 / 15%); }
 .ml-game-cover { background: linear-gradient(145deg, #e0edf8, #f8e9ef); }
@@ -189,6 +191,7 @@
   .roblox-banner h1 { font-size: 47px; }
   .roblox-banner-copy > p:last-child { max-width: 250px; font-size: 11px; }
   .roblox-banner-art { width: 36%; }
+  .roblox-banner::after { background-position: left 12% center; background-size: 300px auto; opacity: .16; }
   .roblox-banner-art .roblox-symbol { width: 72px; height: 72px; border-radius: 19px; font-size: 42px; }
   .roblox-banner-art .image-label { max-width: 95px; font-size: 8px; text-align: center; }
   .game-overview { gap: 13px; padding: 13px; }

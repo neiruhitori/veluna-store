@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Veluna Store — temukan produk pilihan dan penawaran spesial.">
   <title>Veluna Store — Belanja Pilihanmu</title>
+  <link rel="icon" type="image/png" href="image/iconvelunabulat.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -13,7 +14,7 @@
 <body>
   <header class="site-header">
     <div class="header-top page-width">
-      <a class="brand" href="#" aria-label="Veluna Store beranda">VELUNA<span>STORE</span></a>
+      <a class="brand" href="#" aria-label="Veluna Store beranda"><img class="brand-mark" src="image/iconveluna.png" alt="">VELUNA<span>STORE</span></a>
 
       <form class="search" role="search" action="index.html" method="get">
         <label class="sr-only" for="site-search">Cari produk</label>
@@ -29,9 +30,8 @@
     <nav class="main-nav page-width" aria-label="Navigasi utama">
       <a class="active" href="#">Beranda</a>
       <a href="#produk">Produk</a>
-      <a href="#kategori">Kategori</a>
       <a href="#tentang">Tentang Kami</a>
-      <a href="#bantuan">Bantuan</a>
+      <a href="#cara-order" data-order-guide>Cara Order</a>
     </nav>
   </header>
 
@@ -45,8 +45,7 @@
             <p class="hero-description">Pilihan produk terbaik, harga bersahabat, dan pengalaman belanja yang nyaman untukmu.</p>
             <a class="button button-light" href="#produk">Jelajahi Produk <span aria-hidden="true">→</span></a>
           </div>
-          <div class="hero-art" aria-label="Area gambar banner pertama" role="img">
-            <span class="image-hint">Area gambar banner 1</span>
+          <div class="hero-art" aria-label="Banner Veluna Store" role="img">
             <span class="hero-badge">PILIHAN<br><strong>SPESIAL</strong></span>
           </div>
         </article>
@@ -57,8 +56,7 @@
             <p class="hero-description">Jelajahi koleksi terbaru Veluna dan temukan pilihan yang paling cocok untukmu.</p>
             <a class="button button-light" href="#produk">Lihat Koleksi <span aria-hidden="true">→</span></a>
           </div>
-          <div class="hero-art" aria-label="Area gambar banner kedua" role="img">
-            <span class="image-hint">Area gambar banner 2</span>
+          <div class="hero-art" aria-label="Banner Veluna Store" role="img">
             <span class="hero-badge">KOLEKSI<br><strong>BARU</strong></span>
           </div>
         </article>
@@ -69,8 +67,7 @@
             <p class="hero-description">Temukan produk pilihan dan penawaran menarik yang sudah disiapkan untukmu.</p>
             <a class="button button-light" href="#produk">Temukan Pilihan <span aria-hidden="true">→</span></a>
           </div>
-          <div class="hero-art" aria-label="Area gambar banner ketiga" role="img">
-            <span class="image-hint">Area gambar banner 3</span>
+          <div class="hero-art" aria-label="Banner Veluna Store" role="img">
             <span class="hero-badge">PILIHAN<br><strong>VELUNA</strong></span>
           </div>
         </article>
@@ -143,12 +140,12 @@
     </section>
 
     <section class="promo page-width">
-      <div class="promo-art" role="img" aria-label="Area gambar promosi"><span>Area gambar promosi</span></div>
+      <div class="promo-art" role="img" aria-label="Ilustrasi Veluna Store"><img src="image/iconvelunabulat.png" alt=""></div>
       <div class="promo-copy">
         <p class="eyebrow">KENALI VELUNA</p>
-        <h2>Hal-hal baik, dimulai dari pilihan yang tepat.</h2>
-        <p>Temukan koleksi pilihan dan inspirasi terbaru yang kami siapkan khusus untuk menemani harimu.</p>
-        <a class="button button-dark" href="#tentang">Tentang Veluna <span aria-hidden="true">→</span></a>
+        <h2>Teman belanja digitalmu, sejak Februari 2026.</h2>
+        <p>Berawal dari gift in-game Roblox, kini VélunaID hadir dengan pilihan produk digital yang mudah, aman, dan ramah di kantong.</p>
+        <button class="button button-dark" type="button" data-veluna-about-open>Tentang Veluna <span aria-hidden="true">→</span></button>
       </div>
     </section>
 
@@ -196,29 +193,67 @@
     </div>
   </dialog>
 
+  <dialog class="about-dialog" aria-labelledby="about-dialog-title" data-veluna-about-dialog>
+    <button class="method-dialog-close" type="button" aria-label="Tutup cerita VélunaID" data-veluna-about-close>×</button>
+    <div class="about-dialog-content" data-about-page="story">
+      <div class="about-dialog-heading">
+        <img src="image/iconvelunabulat.png" alt="">
+        <p class="eyebrow">CERITA KAMI · SEJAK FEBRUARI 2026</p>
+      </div>
+      <h2 id="about-dialog-title">Berawal dari satu gift, tumbuh jadi teman digitalmu.</h2>
+      <p class="about-dialog-story">VélunaID berdiri pada Februari 2026 dari keinginan sederhana: menyediakan kebutuhan digital yang mudah, aman, dan ramah di kantong. Perjalanan kami dimulai dari gift in-game Roblox, lalu berkembang ke penjualan Robux. Kini, VélunaID terus bertumbuh dengan menghadirkan beragam produk digital, termasuk aplikasi premium.</p>
+      <div class="about-values">
+        <div><span aria-hidden="true">✦</span><strong>Aman & terpercaya</strong><small>Belanja dengan lebih tenang.</small></div>
+        <div><span aria-hidden="true">♡</span><strong>Harga bersahabat</strong><small>Produk berkualitas, tetap affordable.</small></div>
+        <div><span aria-hidden="true">→</span><strong>Pelayanan friendly</strong><small>Cepat, ramah, dan nggak ribet.</small></div>
+      </div>
+      <p class="about-dialog-note">Visi kami adalah menjadi toko digital yang aman, affordable, dan terpercaya. Terima kasih sudah menjadi bagian dari perjalanan VélunaID.</p>
+      <button class="button button-dark about-dialog-done" type="button" data-about-next>Senang berkenalan! <span aria-hidden="true">♡</span></button>
+    </div>
+    <section class="about-welcome-page" aria-labelledby="about-welcome-title" data-about-page="welcome" hidden>
+      <div class="welcome-art" aria-hidden="true">
+        <span class="welcome-spark welcome-spark-one">✦</span>
+        <span class="welcome-spark welcome-spark-two">♡</span>
+        <img src="image/iconvelunabulat.png" alt="">
+      </div>
+      <p class="eyebrow">SENANG BISA KENAL KAMU</p>
+      <h2 id="about-welcome-title" tabindex="-1">Hai, teman Veluna! ✨</h2>
+      <p class="welcome-message" aria-live="polite" data-welcome-message>Senang kamu mampir dan mengenal cerita kami. Semoga kamu menemukan hal digital yang kamu cari di sini.</p>
+      <div class="welcome-progress" role="group" aria-label="Langkah sambutan">
+        <span class="is-current" data-welcome-step="0"></span>
+        <span data-welcome-step="1"></span>
+        <span data-welcome-step="2"></span>
+      </div>
+      <div class="welcome-actions">
+        <button class="button button-dark" type="button" data-welcome-next>Lanjutkan cerita <span aria-hidden="true">→</span></button>
+        <button class="welcome-back" type="button" data-about-back>← Kembali ke cerita Véluna</button>
+      </div>
+    </section>
+  </dialog>
+
   <footer class="site-footer" id="tentang">
     <div class="footer-main page-width">
       <div class="footer-about">
-        <a class="brand footer-brand" href="#">VELUNA<span>STORE</span></a>
+        <a class="brand footer-brand" href="#"><img class="brand-mark" src="image/iconvelunabulat.png" alt="">VELUNA<span>STORE</span></a>
         <p>Temukan produk pilihan dan pengalaman belanja yang menyenangkan hanya di Veluna Store.</p>
-        <div class="social-links" aria-label="Media sosial"><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="TikTok">tk</a><a href="#" aria-label="Facebook">fb</a></div>
+        <div class="social-links" aria-label="Media sosial"><a href="https://www.instagram.com/velunaidd/" aria-label="Instagram">ig</a><a href="https://www.tiktok.com/@velunaid?lang=id-ID" aria-label="TikTok">tk</a><a href="https://www.facebook.com/share/1DvF4zoCWN/" aria-label="Facebook">fb</a></div>
       </div>
       <div class="footer-column">
         <h2>Bantuan</h2>
-        <a href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi kami</a><a href="#bantuan">Cara berbelanja</a><a href="#bantuan">Pengiriman</a><a href="#bantuan">FAQ</a>
+        <a href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi kami</a><a href="#cara-order" data-order-guide>Cara Order</a>
       </div>
       <div class="footer-column">
         <h2>Informasi</h2>
-        <a href="#">Tentang kami</a><a href="#">Kebijakan privasi</a><a href="#">Syarat & ketentuan</a>
+        <a href="#">Tentang kami</a>
       </div>
       <div class="footer-column newsletter" id="bantuan">
         <h2>Kabar Veluna</h2>
         <p>Dapatkan kabar terbaru dan penawaran pilihan dari kami.</p>
-        <form><label class="sr-only" for="email">Alamat email</label><input id="email" type="email" placeholder="Alamat email"><button type="submit" aria-label="Daftar">→</button></form>
       </div>
     </div>
-    <div class="footer-bottom page-width"><p>© 2026 Veluna Store. Hak cipta dilindungi.</p><p>Dibuat dengan sepenuh hati <span aria-hidden="true">♡</span></p></div>
+    <div class="footer-bottom page-width"><p>© 2026 Veluna Store. Hak cipta dilindungi.</p><p>Dibuat dengan sepenuh hati oleh Danielle <span aria-hidden="true">♡</span></p></div>
   </footer>
+  <script src="order-guide.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
