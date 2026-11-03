@@ -7,12 +7,20 @@ const selectedUsername = document.querySelector("[data-selected-username]");
 const selectedPrice = document.querySelector("[data-selected-price]");
 const selectedPayment = document.querySelector("[data-selected-payment]");
 const checkoutMessage = document.querySelector("[data-checkout-message]");
-const paymentOptions = Array.from(document.querySelectorAll("[data-payment-option]"));
-const providerOptions = Array.from(document.querySelectorAll("[data-provider-option]"));
-const paymentPanels = Array.from(document.querySelectorAll("[data-payment-panel]"));
+const paymentOptions = Array.from(
+  document.querySelectorAll("[data-payment-option]"),
+);
+const providerOptions = Array.from(
+  document.querySelectorAll("[data-provider-option]"),
+);
+const paymentPanels = Array.from(
+  document.querySelectorAll("[data-payment-panel]"),
+);
 const orderConsent = document.querySelector("[data-order-consent]");
 const checkoutButton = document.querySelector("[data-checkout]");
-const confirmationDialog = document.querySelector("[data-order-confirm-dialog]");
+const confirmationDialog = document.querySelector(
+  "[data-order-confirm-dialog]",
+);
 const confirmationSummary = document.querySelector("[data-confirm-summary]");
 let selectedOption = null;
 
@@ -23,10 +31,14 @@ const formatRupiah = (amount) =>
     maximumFractionDigits: 0,
   }).format(amount);
 
-const getSelectedPaymentOption = () => paymentOptions.find((option) => option.checked);
+const getSelectedPaymentOption = () =>
+  paymentOptions.find((option) => option.checked);
 
 const getSelectedProvider = () =>
-  providerOptions.find((option) => option.checked && option.closest(".payment-detail:not([hidden])"));
+  providerOptions.find(
+    (option) =>
+      option.checked && option.closest(".payment-detail:not([hidden])"),
+  );
 
 const getSelectedPayment = () => {
   const payment = getSelectedPaymentOption();
@@ -39,9 +51,9 @@ const getSelectedPayment = () => {
 const isOrderComplete = () =>
   Boolean(
     selectedOption &&
-      usernameInput.value.trim() &&
-      getSelectedPayment() &&
-      (!orderConsent || orderConsent.checked),
+    usernameInput.value.trim() &&
+    getSelectedPayment() &&
+    (!orderConsent || orderConsent.checked),
   );
 
 const setPaymentPanels = () => {
@@ -65,8 +77,12 @@ const updateOrderSummary = () => {
   orderDetails.hidden = false;
   selectedNominal.textContent = `${Number(selectedOption.dataset.nominal).toLocaleString("id-ID")} Robux`;
   selectedUsername.textContent = username || "Belum diisi";
-  selectedPrice.textContent = formatRupiah(Number(selectedOption.dataset.price));
-  if (selectedPayment) selectedPayment.textContent = getSelectedPayment() || "Pilih metode pembayaran";
+  selectedPrice.textContent = formatRupiah(
+    Number(selectedOption.dataset.price),
+  );
+  if (selectedPayment)
+    selectedPayment.textContent =
+      getSelectedPayment() || "Pilih metode pembayaran";
 };
 
 const addConfirmationRow = (label, value) => {
@@ -86,14 +102,19 @@ const showOrderConfirmation = () => {
   );
   addConfirmationRow("Username Roblox", usernameInput.value.trim());
   addConfirmationRow("Pembayaran", getSelectedPayment());
-  addConfirmationRow("Total contoh", formatRupiah(Number(selectedOption.dataset.price)));
+  addConfirmationRow(
+    "Total",
+    formatRupiah(Number(selectedOption.dataset.price)),
+  );
   confirmationDialog.showModal();
 };
 
 nominalOptions.forEach((option) => {
   option.addEventListener("click", () => {
     selectedOption = option;
-    nominalOptions.forEach((item) => item.setAttribute("aria-pressed", String(item === option)));
+    nominalOptions.forEach((item) =>
+      item.setAttribute("aria-pressed", String(item === option)),
+    );
     checkoutMessage.textContent = "";
     updateOrderSummary();
   });
@@ -129,41 +150,106 @@ checkoutButton.addEventListener("click", () => {
   showOrderConfirmation();
 });
 
-confirmationDialog.querySelector("[data-confirm-cancel]").addEventListener("click", () => {
-  confirmationDialog.close();
-});
-
-confirmationDialog.querySelector("[data-confirm-submit]").addEventListener("click", () => {
-  if (!isOrderComplete()) {
+confirmationDialog
+  .querySelector("[data-confirm-cancel]")
+  .addEventListener("click", () => {
     confirmationDialog.close();
-    return;
-  }
+  });
 
-  const payment = getSelectedPayment();
-  const paymentInstruction =
-    payment === "QRIS"
-      ? "Saya akan membayar dengan memindai QRIS yang ditampilkan di halaman, lalu mengirim bukti pembayaran di chat ini."
-      : payment === "Transfer Bank - SeaBank"
-        ? "Saya akan transfer ke SeaBank rekening 901318468036 dan mengirim bukti pembayaran di chat ini."
-        : `Saya akan membayar dengan ${payment} ke nomor +62 852-3649-6518 dan mengirim bukti pembayaran di chat ini.`;
-  const message = [
-    `Halo Veluna, saya ingin konfirmasi pesanan Roblox (${document.body.dataset.orderMethod}).`,
-    `Metode produk: ${document.body.dataset.orderMethod}`,
-    `Nominal: ${Number(selectedOption.dataset.nominal).toLocaleString("id-ID")} Robux`,
-    `Username Roblox: ${usernameInput.value.trim()}`,
-    `Pembayaran: ${payment}`,
-    `Total contoh: ${formatRupiah(Number(selectedOption.dataset.price))}`,
-    paymentInstruction,
-    "",
-    "Mohon konfirmasi pesanan saya. Saya tidak menyertakan kata sandi atau kode OTP.",
-  ].join("\n");
-  const whatsappUrl = `https://wa.me/6738386518?text=${encodeURIComponent(message)}`;
-  window.location.assign(whatsappUrl);
-});
+confirmationDialog
+  .querySelector("[data-confirm-submit]")
+  .addEventListener("click", () => {
+    if (!isOrderComplete()) {
+      confirmationDialog.close();
+      return;
+    }
 
-confirmationDialog.addEventListener("click", (event) => {
-  if (event.target === confirmationDialog) confirmationDialog.close();
-});
+    const payment = getSelectedPayment();
+    const orderMethod = document.body.dataset.orderMethod;
+    const username = usernameInput.value.trim();
+    const nominal = Number(selectedOption.dataset.nominal);
+    const total = Number(selectedOption.dataset.price);
+
+    const formatNumber = (value) => Number(value).toLocaleString("id-ID");
+
+    const formatMoney = (value) => `Rp${formatNumber(value)}`;
+
+    // Instruksi berdasarkan metode pembayaran yang dipilih.
+
+    const paymentInstructions = {
+      QRIS: [
+        "୨୧ *PEMBAYARAN QRIS*",
+        "Silakan scan QRIS pada halaman pembayaran.",
+      ].join("\n"),
+
+      "Transfer Bank - SeaBank": [
+        "୨୧ *PEMBAYARAN SEABANK*",
+        "Rekening: 901318468036",
+        "a.n. MV",
+      ].join("\n"),
+    };
+
+    const paymentInstruction =
+      paymentInstructions[payment] ??
+      [
+        `୨୧ *PEMBAYARAN ${payment.toUpperCase()}*`,
+        "Nomor: 0852-3649-6518",
+        "a.n. MV",
+      ].join("\n");
+
+    const message = [
+      "୨୧ 𓂃 🌙 𐙚",
+      "*V E L U N A  S T U D I O*",
+      "",
+      "🧾 *PESANAN DIGITAL*",
+      "Invoice & payment ♡",
+      "",
+      "━━━━━━━━━━━━━━",
+      "",
+      "Haii, Veluna! 🦢",
+      "Mau pesen dung xixi ♡",
+      "",
+      "𓆩♡𓆪 *DETAIL PESANAN*",
+      "",
+      "୨୧ Produk: Roblox",
+      `୨୧ Metode: ${orderMethod}`,
+      `୨୧ Username:`,
+      username,
+      `୨୧ Nominal: ${formatNumber(nominal)} Robux`,
+      `୨୧ Pembayaran: ${payment}`,
+      "",
+      "━━━━━━━━━━━━━━",
+      "",
+      "💌 *TOTAL PEMBAYARAN*",
+      `*${formatMoney(total)}*`,
+      "",
+      paymentInstruction,
+      "",
+      "━━━━━━━━━━━━━━",
+      "",
+      "୨୧ *Alternatif pembayaran*",
+      "DANA / GoPay / ShopeePay",
+      "Nomor: 0852-3649-6518",
+      "SeaBank: 901318468036 a.n. MV",
+      "",
+      "━━━━━━━━━━━━━━",
+      "",
+      "🕊️ *PENTING, YAA!*",
+      "",
+      "♡ Kirim bukti pembayaran di chat ini.",
+      "♡ Pesanan diproses setelah pembayaran",
+      "dikonfirmasi oleh admin.",
+      "",
+      "Thank you for ordering at Veluna! 🎀",
+      "With love, Veluna Studio 🌙",
+    ]
+      .filter((line) => line !== null && line !== undefined)
+      .join("\n");
+
+    const whatsappUrl = `https://wa.me/6738386518?text=${encodeURIComponent(message)}`;
+
+    window.location.assign(whatsappUrl);
+  });
 
 setPaymentPanels();
 updateOrderSummary();

@@ -77,8 +77,10 @@ if (carousel) {
 
 const productTabs = Array.from(document.querySelectorAll("[data-product-tab]"));
 const productPanels = Array.from(document.querySelectorAll("[data-product-panel]"));
+let activeProductTab = productTabs.find((tab) => tab.getAttribute("aria-selected") === "true");
 
 const activateProductTab = (selectedTab, moveFocus = false) => {
+  activeProductTab = selectedTab;
   productTabs.forEach((tab) => {
     const isSelected = tab === selectedTab;
     tab.classList.toggle("active", isSelected);
@@ -111,6 +113,79 @@ productTabs.forEach((tab, index) => {
     }
   });
 });
+
+const productSearchForm = document.querySelector(".search");
+const productSearchInput = productSearchForm?.querySelector('input[type="search"]');
+const searchStatus = document.querySelector("[data-search-status]");
+
+if (productSearchForm && productSearchInput && productTabs.length && productPanels.length) {
+  const productCards = Array.from(document.querySelectorAll(".product-card"));
+  const categoryPills = document.querySelector(".category-pills");
+  const searchPanelHeadings = Array.from(
+    document.querySelectorAll(".search-panel-heading"),
+  );
+
+  const filterProducts = (searchTerm) => {
+    const query = searchTerm.trim().toLocaleLowerCase("id-ID");
+
+    if (!query) {
+      productCards.forEach((card) => {
+        card.hidden = false;
+      });
+      categoryPills.hidden = false;
+      searchStatus.hidden = true;
+      searchPanelHeadings.forEach((heading) => {
+        heading.hidden = true;
+      });
+      productPanels.forEach((panel) => {
+        panel.setAttribute("role", "tabpanel");
+        panel.setAttribute("aria-labelledby", `tab-${panel.dataset.productPanel}`);
+      });
+      activateProductTab(activeProductTab);
+      return;
+    }
+
+    let resultCount = 0;
+    productCards.forEach((card) => {
+      const matches = card.textContent.toLocaleLowerCase("id-ID").includes(query);
+      card.hidden = !matches;
+      if (matches) resultCount += 1;
+    });
+
+    categoryPills.hidden = true;
+    searchPanelHeadings.forEach((heading) => {
+      heading.hidden = false;
+    });
+    productPanels.forEach((panel) => {
+      panel.hidden = !Array.from(panel.querySelectorAll(".product-card")).some(
+        (card) => !card.hidden,
+      );
+      panel.setAttribute("role", "region");
+      panel.removeAttribute("aria-labelledby");
+    });
+
+    searchStatus.hidden = false;
+    searchStatus.textContent = resultCount
+      ? `${resultCount} produk ditemukan untuk “${searchTerm.trim()}”.`
+      : `Tidak ada produk yang cocok dengan “${searchTerm.trim()}”.`;
+  };
+
+  productSearchInput.addEventListener("input", () => {
+    filterProducts(productSearchInput.value);
+  });
+  productSearchForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    filterProducts(productSearchInput.value);
+    document.querySelector("#produk").scrollIntoView({ behavior: "smooth" });
+  });
+
+  const initialQuery = new URLSearchParams(window.location.search).get("q") || "";
+  if (initialQuery) {
+    productSearchInput.value = initialQuery;
+    filterProducts(initialQuery);
+    document.querySelector("#produk").scrollIntoView();
+  }
+}
 
 const robloxMethodDialog = document.querySelector("[data-roblox-method-dialog]");
 const robloxMethodTriggers = document.querySelectorAll("[data-roblox-methods]");

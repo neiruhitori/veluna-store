@@ -15,16 +15,14 @@
     <div class="header-top page-width">
       <a class="brand" href="#" aria-label="Veluna Store beranda">VELUNA<span>STORE</span></a>
 
-      <form class="search" role="search">
+      <form class="search" role="search" action="index.html" method="get">
         <label class="sr-only" for="site-search">Cari produk</label>
-        <input id="site-search" type="search" placeholder="Cari produk favoritmu...">
+        <input id="site-search" type="search" name="q" placeholder="Cari produk favoritmu..." autocomplete="off">
         <button type="submit" aria-label="Cari">⌕</button>
       </form>
 
       <div class="header-actions">
-        <button class="locale" type="button"><span aria-hidden="true">◎</span> ID / IDR</button>
-        <a class="login-link" href="#">Masuk</a>
-        <a class="cart-link" href="#" aria-label="Keranjang belanja">Bag <span>0</span></a>
+        <a class="whatsapp-link" href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi via WhatsApp</a>
       </div>
     </div>
 
@@ -105,8 +103,10 @@
         <button class="pill active" id="tab-game" type="button" role="tab" aria-selected="true" aria-controls="panel-game" data-product-tab="game">Game <span>2 produk</span></button>
         <button class="pill" id="tab-premium" type="button" role="tab" aria-selected="false" aria-controls="panel-premium" data-product-tab="premium" tabindex="-1">Aplikasi Premium <span>4 pilihan</span></button>
       </div>
+      <p class="search-status" data-search-status role="status" aria-live="polite" hidden></p>
 
       <div class="product-panel" id="panel-game" role="tabpanel" aria-labelledby="tab-game" data-product-panel="game">
+        <h3 class="search-panel-heading" hidden>Game</h3>
         <div class="product-grid game-grid">
           <article class="product-card">
             <a class="product-image game-image roblox-image" href="roblox.html" data-roblox-methods aria-label="Pilih metode top up Roblox"><span class="game-mark" aria-hidden="true">R</span><span class="image-label">Area gambar Roblox</span><b>GAME</b></a>
@@ -120,6 +120,7 @@
       </div>
 
       <div class="product-panel" id="panel-premium" role="tabpanel" aria-labelledby="tab-premium" data-product-panel="premium" hidden>
+        <h3 class="search-panel-heading" hidden>Aplikasi Premium</h3>
         <div class="product-grid premium-grid">
           <article class="product-card">
             <a class="product-image premium-image" href="#" aria-label="Area gambar aplikasi premium 1"><span class="premium-mark">01</span><span class="image-label">Area gambar aplikasi</span><b>SEGERA HADIR</b></a>
@@ -204,7 +205,7 @@
       </div>
       <div class="footer-column">
         <h2>Bantuan</h2>
-        <a href="#bantuan">Hubungi kami</a><a href="#bantuan">Cara berbelanja</a><a href="#bantuan">Pengiriman</a><a href="#bantuan">FAQ</a>
+        <a href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi kami</a><a href="#bantuan">Cara berbelanja</a><a href="#bantuan">Pengiriman</a><a href="#bantuan">FAQ</a>
       </div>
       <div class="footer-column">
         <h2>Informasi</h2>
