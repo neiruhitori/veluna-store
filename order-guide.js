@@ -16,7 +16,7 @@ const orderGuideMarkup = `
         <h3 class="order-guide-step-title"></h3>
         <p class="order-guide-step-copy"></p>
       </section>
-      <p class="order-guide-security"><strong>Catatan keamanan:</strong> pastikan username, User ID, dan Server sudah benar. Visend dan Mobile Legends tidak meminta kata sandi; Vilog memakai metode via login. Pertimbangkan risikonya dan jangan pernah membagikan kode OTP atau kode pemulihan akun.</p>
+      <p class="order-guide-security"><strong>Catatan keamanan:</strong> pastikan username, User ID, dan Server sudah benar. Visend dan Mobile Legends tidak meminta kata sandi; Vilog memakai metode via login. Keamanan data adalah prioritas utama.</p>
       <div class="order-guide-actions">
         <button class="order-guide-previous" type="button" data-order-guide-previous>← Sebelumnya</button>
         <button class="button button-dark" type="button" data-order-guide-next>Langkah berikutnya <span aria-hidden="true">→</span></button>
@@ -33,12 +33,12 @@ const orderGuideSteps = [
   {
     icon: "📝",
     title: "Isi Data Pesanan dengan Benar",
-    copy: "Masukkan username Roblox untuk Visend atau Vilog. Vilog menggunakan metode via login, sedangkan Visend tidak memerlukan login. Untuk Mobile Legends, isi User ID dan Zone ID (Server). Jangan pernah membagikan kode OTP atau kode pemulihan; jika tidak nyaman dengan metode login, pilih Visend.",
+    copy: "Masukkan username Roblox untuk Visend. Vilog menggunakan metode via login, sedangkan Visend tidak memerlukan login. Untuk Mobile Legends, isi User ID dan Zone ID (Server). Jika tidak nyaman dengan metode login, pilihlah Visend.",
   },
   {
     icon: "🔍",
     title: "Periksa Nominal, ID, dan Server",
-    copy: "Tinjau ringkasan pesanan sebelum melanjutkan. Pastikan pilihan paket, username, User ID, Zone ID, dan metode pembayaran sudah tepat agar pesanan tidak salah tujuan.",
+    copy: "Tinjau ringkasan pesanan sebelum melanjutkan. Pastikan pilihan paket, username, data akun, User ID, Zone ID (Server), dan metode pembayaran sudah tepat agar pesanan tidak salah tujuan.",
   },
   {
     icon: "💬",
@@ -48,7 +48,7 @@ const orderGuideSteps = [
   {
     icon: "✨",
     title: "Tunggu Konfirmasi Admin",
-    copy: "Admin Veluna akan mengecek ketersediaan dan mengonfirmasi total harga serta langkah pembayaran melalui WhatsApp. Lakukan pembayaran hanya setelah menerima instruksi resmi, lalu tunggu pesanan diproses.",
+    copy: "Admin Veluna akan mengecek ketersediaan dan mengonfirmasi detail data pesanan serta langkah pembayaran melalui WhatsApp. Lakukan pembayaran hanya setelah menerima instruksi resmi, lalu tunggu pesanan diproses.",
   },
 ];
 
