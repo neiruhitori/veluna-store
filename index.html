@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Veluna Store — temukan produk pilihan dan penawaran spesial.">
+  <title>Veluna Store — Belanja Pilihanmu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-top page-width">
+      <a class="brand" href="#" aria-label="Veluna Store beranda">VELUNA<span>STORE</span></a>
+
+      <form class="search" role="search">
+        <label class="sr-only" for="site-search">Cari produk</label>
+        <input id="site-search" type="search" placeholder="Cari produk favoritmu...">
+        <button type="submit" aria-label="Cari">⌕</button>
+      </form>
+
+      <div class="header-actions">
+        <button class="locale" type="button"><span aria-hidden="true">◎</span> ID / IDR</button>
+        <a class="login-link" href="#">Masuk</a>
+        <a class="cart-link" href="#" aria-label="Keranjang belanja">Bag <span>0</span></a>
+      </div>
+    </div>
+
+    <nav class="main-nav page-width" aria-label="Navigasi utama">
+      <a class="active" href="#">Beranda</a>
+      <a href="#produk">Produk</a>
+      <a href="#kategori">Kategori</a>
+      <a href="#tentang">Tentang Kami</a>
+      <a href="#bantuan">Bantuan</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero page-width" aria-label="Penawaran unggulan" aria-roledescription="carousel" data-carousel>
+      <div class="hero-track" data-carousel-track aria-live="off">
+        <article class="hero-slide is-active" aria-roledescription="slide" aria-label="1 dari 3">
+          <div class="hero-copy">
+            <p class="eyebrow">SELAMAT DATANG DI VELUNA</p>
+            <h1>Temukan yang kamu suka,<br><span>dengan cara yang mudah.</span></h1>
+            <p class="hero-description">Pilihan produk terbaik, harga bersahabat, dan pengalaman belanja yang nyaman untukmu.</p>
+            <a class="button button-light" href="#produk">Jelajahi Produk <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-art" aria-label="Area gambar banner pertama" role="img">
+            <span class="image-hint">Area gambar banner 1</span>
+            <span class="hero-badge">PILIHAN<br><strong>SPESIAL</strong></span>
+          </div>
+        </article>
+        <article class="hero-slide" aria-roledescription="slide" aria-label="2 dari 3" aria-hidden="true" inert>
+          <div class="hero-copy">
+            <p class="eyebrow">KOLEKSI TERBARU</p>
+            <h1>Awali harimu dengan<br><span>inspirasi yang baru.</span></h1>
+            <p class="hero-description">Jelajahi koleksi terbaru Veluna dan temukan pilihan yang paling cocok untukmu.</p>
+            <a class="button button-light" href="#produk">Lihat Koleksi <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-art" aria-label="Area gambar banner kedua" role="img">
+            <span class="image-hint">Area gambar banner 2</span>
+            <span class="hero-badge">KOLEKSI<br><strong>BARU</strong></span>
+          </div>
+        </article>
+        <article class="hero-slide" aria-roledescription="slide" aria-label="3 dari 3" aria-hidden="true" inert>
+          <div class="hero-copy">
+            <p class="eyebrow">PENAWARAN KHUSUS</p>
+            <h1>Hal istimewa untuk<br><span>momen spesialmu.</span></h1>
+            <p class="hero-description">Temukan produk pilihan dan penawaran menarik yang sudah disiapkan untukmu.</p>
+            <a class="button button-light" href="#produk">Temukan Pilihan <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="hero-art" aria-label="Area gambar banner ketiga" role="img">
+            <span class="image-hint">Area gambar banner 3</span>
+            <span class="hero-badge">PILIHAN<br><strong>VELUNA</strong></span>
+          </div>
+        </article>
+      </div>
+      <button class="carousel-arrow carousel-previous" type="button" aria-label="Banner sebelumnya" data-carousel-previous>‹</button>
+      <button class="carousel-arrow carousel-next" type="button" aria-label="Banner berikutnya" data-carousel-next>›</button>
+      <div class="hero-dots" role="group" aria-label="Pilih banner">
+        <button class="selected" type="button" aria-label="Tampilkan banner 1" aria-current="true" data-carousel-dot="0"></button>
+        <button type="button" aria-label="Tampilkan banner 2" data-carousel-dot="1"></button>
+        <button type="button" aria-label="Tampilkan banner 3" data-carousel-dot="2"></button>
+      </div>
+    </section>
+
+    <section class="benefits page-width" aria-label="Keunggulan Veluna Store">
+      <div><span class="benefit-icon">✦</span><p><strong>Produk pilihan</strong><small>Kurasi terbaik untukmu</small></p></div>
+      <div><span class="benefit-icon">◇</span><p><strong>Belanja nyaman</strong><small>Mudah dari awal sampai akhir</small></p></div>
+      <div><span class="benefit-icon">♡</span><p><strong>Layanan ramah</strong><small>Kami siap membantu</small></p></div>
+    </section>
+
+    <section class="product-section page-width" id="produk">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PILIHAN UNTUKMU</p>
+          <h2>Jelajahi Produk</h2>
+          <p class="section-description">Pilih kategori dan temukan produk yang kamu cari.</p>
+        </div>
+      </div>
+
+      <div class="category-pills" id="kategori" role="tablist" aria-label="Kategori produk">
+        <button class="pill active" id="tab-game" type="button" role="tab" aria-selected="true" aria-controls="panel-game" data-product-tab="game">Game <span>2 produk</span></button>
+        <button class="pill" id="tab-premium" type="button" role="tab" aria-selected="false" aria-controls="panel-premium" data-product-tab="premium" tabindex="-1">Aplikasi Premium <span>4 pilihan</span></button>
+      </div>
+
+      <div class="product-panel" id="panel-game" role="tabpanel" aria-labelledby="tab-game" data-product-panel="game">
+        <div class="product-grid game-grid">
+          <article class="product-card">
+            <a class="product-image game-image roblox-image" href="roblox.html" data-roblox-methods aria-label="Pilih metode top up Roblox"><span class="game-mark" aria-hidden="true">R</span><span class="image-label">Area gambar Roblox</span><b>GAME</b></a>
+            <div class="product-info"><p class="product-category">GAME</p><h3>Roblox</h3><p class="product-detail">Robux dan item pilihan</p><a class="product-cta" href="roblox.html" data-roblox-methods>Pilih metode <span aria-hidden="true">→</span></a></div>
+          </article>
+          <article class="product-card">
+            <a class="product-image game-image ml-image" href="#" aria-label="Area gambar Mobile Legends"><span class="game-mark" aria-hidden="true">ML</span><span class="image-label">Area gambar Mobile Legends</span><b>GAME</b></a>
+            <div class="product-info"><p class="product-category">GAME</p><h3>Mobile Legends</h3><p class="product-detail">Diamond dan item pilihan</p><a class="product-cta" href="#">Lihat produk <span aria-hidden="true">→</span></a></div>
+          </article>
+        </div>
+      </div>
+
+      <div class="product-panel" id="panel-premium" role="tabpanel" aria-labelledby="tab-premium" data-product-panel="premium" hidden>
+        <div class="product-grid premium-grid">
+          <article class="product-card">
+            <a class="product-image premium-image" href="#" aria-label="Area gambar aplikasi premium 1"><span class="premium-mark">01</span><span class="image-label">Area gambar aplikasi</span><b>SEGERA HADIR</b></a>
+            <div class="product-info"><p class="product-category">APLIKASI PREMIUM</p><h3>Nama aplikasi</h3><p class="product-detail">Detail produk menyusul</p><a class="product-cta" href="#">Lihat detail <span aria-hidden="true">→</span></a></div>
+          </article>
+          <article class="product-card">
+            <a class="product-image premium-image premium-tone-two" href="#" aria-label="Area gambar aplikasi premium 2"><span class="premium-mark">02</span><span class="image-label">Area gambar aplikasi</span><b>SEGERA HADIR</b></a>
+            <div class="product-info"><p class="product-category">APLIKASI PREMIUM</p><h3>Nama aplikasi</h3><p class="product-detail">Detail produk menyusul</p><a class="product-cta" href="#">Lihat detail <span aria-hidden="true">→</span></a></div>
+          </article>
+          <article class="product-card">
+            <a class="product-image premium-image premium-tone-three" href="#" aria-label="Area gambar aplikasi premium 3"><span class="premium-mark">03</span><span class="image-label">Area gambar aplikasi</span><b>SEGERA HADIR</b></a>
+            <div class="product-info"><p class="product-category">APLIKASI PREMIUM</p><h3>Nama aplikasi</h3><p class="product-detail">Detail produk menyusul</p><a class="product-cta" href="#">Lihat detail <span aria-hidden="true">→</span></a></div>
+          </article>
+          <article class="product-card">
+            <a class="product-image premium-image premium-tone-four" href="#" aria-label="Area gambar aplikasi premium 4"><span class="premium-mark">04</span><span class="image-label">Area gambar aplikasi</span><b>SEGERA HADIR</b></a>
+            <div class="product-info"><p class="product-category">APLIKASI PREMIUM</p><h3>Nama aplikasi</h3><p class="product-detail">Detail produk menyusul</p><a class="product-cta" href="#">Lihat detail <span aria-hidden="true">→</span></a></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="promo page-width">
+      <div class="promo-art" role="img" aria-label="Area gambar promosi"><span>Area gambar promosi</span></div>
+      <div class="promo-copy">
+        <p class="eyebrow">KENALI VELUNA</p>
+        <h2>Hal-hal baik, dimulai dari pilihan yang tepat.</h2>
+        <p>Temukan koleksi pilihan dan inspirasi terbaru yang kami siapkan khusus untuk menemani harimu.</p>
+        <a class="button button-dark" href="#tentang">Tentang Veluna <span aria-hidden="true">→</span></a>
+      </div>
+    </section>
+
+    <section class="article-section page-width" id="artikel">
+      <!-- <div class="section-heading">
+        <div>
+          <p class="eyebrow">CERITA & INSPIRASI</p>
+          <h2>Artikel terbaru</h2>
+          <p class="section-description">Temukan cerita, tips, dan inspirasi dari Veluna.</p>
+        </div>
+        <a class="text-link" href="#">Lihat semua artikel <span aria-hidden="true">→</span></a>
+      </div>
+      <div class="article-grid">
+        <a class="article-card" href="#"><span class="article-image"><span>Area gambar artikel</span></span><span class="article-content"><small>INSPIRASI · 5 MENIT BACA</small><strong>Temukan inspirasi baru bersama Veluna</strong><span>Baca selengkapnya →</span></span></a>
+        <a class="article-card" href="#"><span class="article-image article-image-two"><span>Area gambar artikel</span></span><span class="article-content"><small>PANDUAN · 3 MENIT BACA</small><strong>Tips memilih produk yang tepat untukmu</strong><span>Baca selengkapnya →</span></span></a>
+        <a class="article-card" href="#"><span class="article-image article-image-three"><span>Area gambar artikel</span></span><span class="article-content"><small>VELUNA · 4 MENIT BACA</small><strong>Cerita di balik koleksi pilihan kami</strong><span>Baca selengkapnya →</span></span></a>
+      </div> -->
+    </section>
+  </main>
+
+  <dialog class="roblox-method-dialog" aria-labelledby="roblox-method-title" data-roblox-method-dialog>
+    <div class="method-dialog-content">
+      <button class="method-dialog-close" type="button" aria-label="Tutup pilihan metode" data-method-dialog-close>×</button>
+      <p class="eyebrow">PILIH JENIS LAYANAN</p>
+      <h2 id="roblox-method-title">Top up Roblox</h2>
+      <p class="method-dialog-intro">Pilih metode kategori Roblox untuk melihat paket yang tersedia.</p>
+      <div class="roblox-method-options">
+        <a class="roblox-method-option" href="roblox.html">
+          <span class="method-option-icon" aria-hidden="true">V</span>
+          <span><strong>Robux Visend</strong><small>Proses kirim Robux hanya menggunakan username.</small></span>
+          <span class="method-option-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="roblox-method-option vilog-option" href="roblox-vilog.html">
+          <span class="method-option-icon" aria-hidden="true">V</span>
+          <span><strong>Robux Vilog</strong><small>Proses kirim Robux menggunakan login akun.</small></span>
+          <span class="method-option-arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="roblox-method-option gig-option" href="roblox-gig.html">
+          <span class="method-option-icon" aria-hidden="true">G</span>
+          <span><strong>GIG <small>(Gift in Game)</small></strong><small>Halaman sedang disiapkan.</small></span>
+          <span class="method-option-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+      <p class="method-security-note"><span aria-hidden="true">♧</span> Data dijamin keamanan dan kerahasiaan nya.</p>
+    </div>
+  </dialog>
+
+  <footer class="site-footer" id="tentang">
+    <div class="footer-main page-width">
+      <div class="footer-about">
+        <a class="brand footer-brand" href="#">VELUNA<span>STORE</span></a>
+        <p>Temukan produk pilihan dan pengalaman belanja yang menyenangkan hanya di Veluna Store.</p>
+        <div class="social-links" aria-label="Media sosial"><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="TikTok">tk</a><a href="#" aria-label="Facebook">fb</a></div>
+      </div>
+      <div class="footer-column">
+        <h2>Bantuan</h2>
+        <a href="#bantuan">Hubungi kami</a><a href="#bantuan">Cara berbelanja</a><a href="#bantuan">Pengiriman</a><a href="#bantuan">FAQ</a>
+      </div>
+      <div class="footer-column">
+        <h2>Informasi</h2>
+        <a href="#">Tentang kami</a><a href="#">Kebijakan privasi</a><a href="#">Syarat & ketentuan</a>
+      </div>
+      <div class="footer-column newsletter" id="bantuan">
+        <h2>Kabar Veluna</h2>
+        <p>Dapatkan kabar terbaru dan penawaran pilihan dari kami.</p>
+        <form><label class="sr-only" for="email">Alamat email</label><input id="email" type="email" placeholder="Alamat email"><button type="submit" aria-label="Daftar">→</button></form>
+      </div>
+    </div>
+    <div class="footer-bottom page-width"><p>© 2026 Veluna Store. Hak cipta dilindungi.</p><p>Dibuat dengan sepenuh hati <span aria-hidden="true">♡</span></p></div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
