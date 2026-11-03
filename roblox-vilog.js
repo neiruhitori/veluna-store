@@ -258,9 +258,14 @@ confirmationDialog
     const orderMethod = document.body.dataset.orderMethod;
     const username = usernameInput.value.trim();
     const password = passwordInput?.value.trim();
-    const backupCodes = getOrderNotes().length > 0
-      ? getOrderNotes().map((note) => `${note.label}: ${note.value}`).join(", ")
-      : "Tidak ada Backup Code";
+
+    const backupCodes =
+      getOrderNotes().length > 0
+        ? getOrderNotes()
+            .map((note) => `- ${note.label}: ${note.value}`)
+            .join("\n")
+        : "- Tidak ada Backup Code";
+
     const nominal = Number(selectedOption.dataset.nominal);
     const total = Number(selectedOption.dataset.price);
 
@@ -308,10 +313,11 @@ confirmationDialog
       "୨୧ Produk: Roblox",
       `୨୧ Metode: ${orderMethod}`,
       `୨୧ Username:`,
-      username,
+      `- ${username}`,
       `୨୧ Password:`,
-      password,
-      `୨୧ Backup Code: ${backupCodes}`,
+      `- ${password}`,
+      `୨୧ Backup Code:`,
+      backupCodes,
       `୨୧ Nominal: ${formatNumber(nominal)} Robux`,
       `୨୧ Pembayaran: ${payment}`,
       "",
