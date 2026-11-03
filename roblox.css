@@ -91,6 +91,9 @@
 .account-field input::placeholder { color: #a0a9b3; }
 .account-field input:focus { border-color: #83a8cb; box-shadow: 0 0 0 3px rgb(86 132 184 / 12%); }
 .account-field small { color: #8995a2; font-size: 9px; }
+.account-fields-row { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 20px; }
+.account-fields-row .account-field { min-width: 0; margin-top: 0; }
+.account-fields-row .account-field input { width: 100%; min-width: 0; }
 .security-notice { margin-top: 16px; padding: 12px 14px; border: 1px solid #f0dfab; border-radius: 7px; background: #fff8e4; color: #73643b; }
 .security-notice strong { font-size: 10px; }
 .security-notice p { margin: 5px 0 0; font-size: 10px; line-height: 1.6; }
@@ -204,6 +207,9 @@
   .nominal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .nominal-option { min-height: 70px; flex-wrap: wrap; gap: 7px; padding: 9px; }
   .ml-account-fields, .ml-product-options { grid-template-columns: 1fr; }
+  .account-fields-row { gap: 8px; }
+  .account-fields-row .account-field input { padding-inline: 8px; font-size: 10px; }
+  .account-fields-row .account-field label { font-size: 10px; }
   .ml-package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .nominal-price { width: calc(100% - 42px); margin-left: 42px; }
   .rating-content { flex-wrap: wrap; }

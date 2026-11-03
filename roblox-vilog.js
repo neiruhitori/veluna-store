@@ -95,6 +95,9 @@ const formatRupiah = (amount) =>
     maximumFractionDigits: 0,
   }).format(amount);
 
+const getUsername = () => usernameInput.value.trim().replace(/^@+/, "");
+const formatUsername = () => `@${getUsername()}`;
+
 const getSelectedPaymentOption = () =>
   paymentOptions.find((option) => option.checked);
 
@@ -115,7 +118,7 @@ const getSelectedPayment = () => {
 const isOrderComplete = () =>
   Boolean(
     selectedOption &&
-    usernameInput.value.trim() &&
+    getUsername() &&
     passwordInput?.value.trim() &&
     getSelectedPayment() &&
     (!orderConsent || orderConsent.checked),
@@ -129,7 +132,7 @@ const setPaymentPanels = () => {
 };
 
 const updateOrderSummary = () => {
-  const username = usernameInput.value.trim();
+  const username = getUsername();
   const password = passwordInput?.value.trim();
 
   checkoutButton.disabled = !isOrderComplete();
@@ -145,7 +148,7 @@ const updateOrderSummary = () => {
 
   selectedNominal.textContent = `${Number(selectedOption.dataset.nominal).toLocaleString("id-ID")} Robux`;
 
-  selectedUsername.textContent = username || "Belum diisi";
+   selectedUsername.textContent = username ? formatUsername() : "Belum diisi";
   selectedPassword.textContent = password || "Belum diisi";
 
   selectedPrice.textContent = formatRupiah(
@@ -173,7 +176,7 @@ const showOrderConfirmation = () => {
     "Nominal",
     `${Number(selectedOption.dataset.nominal).toLocaleString("id-ID")} Robux`,
   );
-  addConfirmationRow("Username Roblox", usernameInput.value.trim());
+  addConfirmationRow("Username Roblox", formatUsername());
   addConfirmationRow(
     "Password Roblox",
     passwordInput?.value.trim() || "Tidak diisi",
@@ -256,7 +259,7 @@ confirmationDialog
 
     const payment = getSelectedPayment();
     const orderMethod = document.body.dataset.orderMethod;
-    const username = usernameInput.value.trim();
+    const username = formatUsername();
     const password = passwordInput?.value.trim();
 
     const backupCodes =

@@ -110,10 +110,17 @@
                 <span class="robux-icon" aria-hidden="true">R</span><span class="nominal-details"><strong>2.000 Robux</strong><small>Visend · contoh harga</small></span><b class="nominal-price">Rp 320.000</b>
               </button>
             </div>
-            <div class="account-field">
-              <label for="roblox-username">Username Roblox</label>
-              <input id="roblox-username" type="text" autocomplete="off" placeholder="Masukkan username Roblox">
-              <small>Masukkan username saja. Jangan masukkan kata sandi atau kode OTP.</small>
+            <div class="account-fields-row">
+              <div class="account-field">
+                <label for="roblox-username">Username Roblox</label>
+                <input id="roblox-username" type="text" autocomplete="off" placeholder="Masukkan nama pengguna Roblox">
+                <small>Masukkan username Roblox; tanda @ ditambahkan otomatis.</small>
+              </div>
+              <div class="account-field">
+                <label for="roblox-displayname">Displayname Roblox</label>
+                <input id="roblox-displayname" type="text" autocomplete="off" placeholder="Masukkan nama tampilan Roblox">
+                <small>Masukkan Nama Tampilan.</small>
+              </div>
             </div>
             <fieldset class="payment-field">
               <legend>2. Pilih pembayaran</legend>
@@ -166,6 +173,7 @@
               <div><span>Metode</span><strong>Visend</strong></div>
               <div><span>Nominal</span><strong data-selected-nominal>—</strong></div>
               <div><span>Username</span><strong data-selected-username>—</strong></div>
+              <div><span>Displayname</span><strong data-selected-displayname>—</strong></div>
               <div><span>Pembayaran</span><strong data-selected-payment>—</strong></div>
               <div class="order-total"><span>Total</span><strong data-selected-price>—</strong></div>
             </div>
@@ -179,9 +187,9 @@
       <section class="description-card">
         <p class="eyebrow">TENTANG PRODUK</p>
         <h2>Robux Visend</h2>
-        <p>1. Akun roblox wajib berusia 18 tahun atau lebih.<br>
-          2. Kalau penerima di bawah 18 tahun, maka Akun harus tertaut dengan akun orang tua.<br>
-          Orang tua harus menyetujui setiap ada Robux masuk.<br>
+        <p>1. WAJIB menyalakan V2L (verifikasi 2 langkah) bagi yg membeli lebih dari 500 robux, agar limit penerima robux naik.<br>
+          2. Akun baru atau kurang dari 2 bulan hanya bisa menerima robux 500r/hari dan 1000r/bulan. WAJIB mengaktifkan V2L dari awal biar limitnya naik.<br>
+          3. WAJIB menautkan akun roblox parents yg sudah TERVERIFIKASI 18+ bagi penerima yg robloxnya terverifikasi kurang dari 18 tahun.<br>
           </p>
       </section>
     </div>
@@ -193,7 +201,7 @@
       <h2 id="order-confirm-title">Konfirmasi pesanan</h2>
       <p class="confirm-intro">Pastikan detail pesanan sudah benar. WhatsApp akan dibuka dengan pilihan pembayaran yang sudah disiapkan.</p>
       <dl class="confirm-summary" data-confirm-summary></dl>
-      <p class="confirm-security">Pembayaran dilanjutkan melalui WhatsApp. Jangan kirim kata sandi atau kode OTP Roblox.</p>
+      <p class="confirm-security">Pembayaran dilanjutkan melalui WhatsApp. Pastikan data kamu benar.</p>
       <div class="confirm-actions">
         <button class="confirm-cancel" type="button" data-confirm-cancel>Kembali</button>
         <button class="confirm-submit" type="button" data-confirm-submit>Konfirmasi & buka WhatsApp</button>

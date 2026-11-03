@@ -1,9 +1,11 @@
 const nominalOptions = Array.from(document.querySelectorAll("[data-nominal]"));
 const usernameInput = document.querySelector("#roblox-username");
+const displaynameInput = document.querySelector("#roblox-displayname");
 const orderEmpty = document.querySelector("[data-order-empty]");
 const orderDetails = document.querySelector("[data-order-details]");
 const selectedNominal = document.querySelector("[data-selected-nominal]");
 const selectedUsername = document.querySelector("[data-selected-username]");
+const selectedDisplayname = document.querySelector("[data-selected-displayname]");
 const selectedPrice = document.querySelector("[data-selected-price]");
 const selectedPayment = document.querySelector("[data-selected-payment]");
 const checkoutMessage = document.querySelector("[data-checkout-message]");
@@ -31,6 +33,9 @@ const formatRupiah = (amount) =>
     maximumFractionDigits: 0,
   }).format(amount);
 
+const getUsername = () => usernameInput.value.trim().replace(/^@+/, "");
+const formatUsername = () => `@${getUsername()}`;
+
 const getSelectedPaymentOption = () =>
   paymentOptions.find((option) => option.checked);
 
@@ -51,7 +56,8 @@ const getSelectedPayment = () => {
 const isOrderComplete = () =>
   Boolean(
     selectedOption &&
-    usernameInput.value.trim() &&
+    getUsername() &&
+    displaynameInput.value.trim() &&
     getSelectedPayment() &&
     (!orderConsent || orderConsent.checked),
   );
@@ -64,7 +70,8 @@ const setPaymentPanels = () => {
 };
 
 const updateOrderSummary = () => {
-  const username = usernameInput.value.trim();
+  const username = getUsername();
+  const displayname = displaynameInput.value.trim();
   checkoutButton.disabled = !isOrderComplete();
 
   if (!selectedOption) {
@@ -76,7 +83,8 @@ const updateOrderSummary = () => {
   orderEmpty.hidden = true;
   orderDetails.hidden = false;
   selectedNominal.textContent = `${Number(selectedOption.dataset.nominal).toLocaleString("id-ID")} Robux`;
-  selectedUsername.textContent = username || "Belum diisi";
+  selectedUsername.textContent = username ? formatUsername() : "Belum diisi";
+  selectedDisplayname.textContent = displayname || "Belum diisi";
   selectedPrice.textContent = formatRupiah(
     Number(selectedOption.dataset.price),
   );
@@ -100,7 +108,8 @@ const showOrderConfirmation = () => {
     "Nominal",
     `${Number(selectedOption.dataset.nominal).toLocaleString("id-ID")} Robux`,
   );
-  addConfirmationRow("Username Roblox", usernameInput.value.trim());
+  addConfirmationRow("Username Roblox", formatUsername());
+  addConfirmationRow("Displayname Roblox", displaynameInput.value.trim());
   addConfirmationRow("Pembayaran", getSelectedPayment());
   addConfirmationRow(
     "Total",
@@ -121,6 +130,11 @@ nominalOptions.forEach((option) => {
 });
 
 usernameInput.addEventListener("input", () => {
+  checkoutMessage.textContent = "";
+  updateOrderSummary();
+});
+
+displaynameInput.addEventListener("input", () => {
   checkoutMessage.textContent = "";
   updateOrderSummary();
 });
@@ -166,7 +180,8 @@ confirmationDialog
 
     const payment = getSelectedPayment();
     const orderMethod = document.body.dataset.orderMethod;
-    const username = usernameInput.value.trim();
+    const username = formatUsername();
+    const displayname = displaynameInput.value.trim();
     const nominal = Number(selectedOption.dataset.nominal);
     const total = Number(selectedOption.dataset.price);
 
@@ -214,7 +229,9 @@ confirmationDialog
       "୨୧ Produk: Roblox",
       `୨୧ Metode: ${orderMethod}`,
       `୨୧ Username:`,
-      username,
+      `- ${username}`,
+      `୨୧ Displayname:`,
+      `- ${displayname}`,
       `୨୧ Nominal: ${formatNumber(nominal)} Robux`,
       `୨୧ Pembayaran: ${payment}`,
       "",
