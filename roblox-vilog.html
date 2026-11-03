@@ -23,14 +23,16 @@
   </div>
   <header class="site-header">
     <div class="header-top page-width">
-      <a class="brand" href="index.html" aria-label="Veluna Store beranda"><img class="brand-mark" src="image/iconveluna.png" alt="">VELUNA<span>STORE</span></a>
+      <a class="brand" href="index.html" aria-label="Veluna Store beranda"><img class="brand-mark"
+          src="image/iconveluna.png" alt="">VELUNA<span>STORE</span></a>
       <form class="search" role="search" action="index.html" method="get">
         <label class="sr-only" for="site-search">Cari produk</label>
         <input id="site-search" type="search" name="q" placeholder="Cari produk favoritmu..." autocomplete="off">
         <button type="submit" aria-label="Cari">⌕</button>
       </form>
       <div class="header-actions">
-        <a class="whatsapp-link" href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi via WhatsApp</a>
+        <a class="whatsapp-link" href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi via
+          WhatsApp</a>
       </div>
     </div>
     <nav class="main-nav page-width" aria-label="Navigasi utama">
@@ -93,7 +95,8 @@
             <h2 id="nominal-heading">Pilih paket Robux Vilog</h2>
           </div>
           <div class="nominal-content">
-            <p class="nominal-note">Pilih paket dan harga berikut sesuaikan keinginan Anda. Pastikan username Roblox yang dimasukkan benar dan sesuai dengan akun.</p>
+            <p class="nominal-note">Pilih paket dan harga berikut sesuaikan keinginan Anda. Pastikan username Roblox
+              yang dimasukkan benar dan sesuai dengan akun.</p>
             <div class="nominal-grid" role="group" aria-label="Pilihan paket Robux Vilog">
               <button class="nominal-option" type="button" data-nominal="80" data-price="18000" aria-pressed="false">
                 <span class="robux-icon" aria-hidden="true">R</span><span class="nominal-details"><strong>80
@@ -112,40 +115,106 @@
                     Robux</strong><small>Vilog · contoh harga</small></span><b class="nominal-price">Rp 160.000</b>
               </button>
             </div>
-            <div class="account-field">
+            <!-- <div class="account-field">
               <label for="roblox-username">Username Roblox</label>
               <input id="roblox-username" type="text" autocomplete="off" placeholder="Masukkan username Roblox">
-              <small>Username saja. Veluna tidak meminta atau menerima kata sandi maupun kode OTP.</small>
             </div>
+            <div class="account-field">
+              <label for="roblox-password">Password Roblox</label>
+              <input id="roblox-password" type="password" autocomplete="off" placeholder="Masukkan password Roblox">
+            </div> -->
+
+            <div class="account-fields-row">
+              <div class="account-field">
+                <label for="roblox-username">Username Roblox</label>
+                <input id="roblox-username" type="text" autocomplete="off" placeholder="Masukkan username Roblox">
+              </div>
+
+              <div class="account-field">
+                <label for="roblox-password">Password Roblox</label>
+                <div class="password-input-wrapper">
+                  <input id="roblox-password" type="password" autocomplete="off" placeholder="Masukkan password Roblox">
+                  
+                  <button type="button" class="toggle-password" id="toggle-password" aria-label="Tampilkan password"
+                    aria-pressed="false">
+                    <svg class="eye-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"
+                      stroke-linejoin="round" aria-hidden="true">
+                      <path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7Z" />
+                      <circle cx="12" cy="12" r="3" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <!-- Catatan Tambahan -->
+            <div class="additional-notes">
+              <div class="notes-heading">
+                <div>
+                  <h3>Backup Code (Opsional)</h3>
+                  <p>Tidak harus mengisi 3 backup code, namun diwajibkan tetap stay online untuk diminta kode
+                    verifikasi.</p>
+                </div>
+                <span class="notes-badge">3 Kolom</span>
+              </div>
+              <div class="notes-grid">
+                <div class="note-field">
+                  <label for="note-1">Backup Code 1</label>
+                  <input id="note-1" placeholder="Masukkan Backup Code 1..." rows="2">
+                </div>
+                <div class="note-field">
+                  <label for="note-2">Backup Code 2</label>
+                  <input id="note-2" placeholder="Masukkan Backup Code 2..." rows="2">
+                </div>
+                <div class="note-field">
+                  <label for="note-3">Backup Code 3</label>
+                  <input id="note-3" placeholder="Masukkan Backup Code 3..." rows="2">
+                </div>
+              </div>
+            </div>
+
+
             <div class="security-notice" role="note">
               <strong>Pengingat keamanan akun</strong>
-              <p>Jangan membagikan kata sandi atau kode verifikasi melalui website maupun WhatsApp. Form ini hanya meminta username Roblox.</p>
+              <p>Keamanan akun adalah prioritas utama kami, anda bisa meriset kata sandi kapan saja dan Backup Code
+                Anda.</p>
             </div>
             <fieldset class="payment-field">
               <legend>2. Pilih pembayaran</legend>
               <label><input type="radio" name="payment-method" value="QRIS" data-payment-option> QRIS</label>
-              <label><input type="radio" name="payment-method" value="Transfer Bank" data-payment-option> Transfer Bank</label>
+              <label><input type="radio" name="payment-method" value="Transfer Bank" data-payment-option> Transfer
+                Bank</label>
               <label><input type="radio" name="payment-method" value="E-Wallet" data-payment-option> E-Wallet</label>
             </fieldset>
             <section class="payment-detail" data-payment-panel="QRIS" hidden>
               <h3>Pembayaran QRIS</h3>
-              <figure class="qris-image"><img src="image/qris.jpeg" alt="Kode QRIS untuk pembayaran Veluna"><figcaption>Pindai kode QRIS ini untuk membayar. Setelah itu, konfirmasi pembayaran melalui WhatsApp.</figcaption></figure>
+              <figure class="qris-image"><img src="image/qris.jpeg" alt="Kode QRIS untuk pembayaran Veluna">
+                <figcaption>Pindai kode QRIS ini untuk membayar. Setelah itu, konfirmasi pembayaran melalui WhatsApp.
+                </figcaption>
+              </figure>
             </section>
             <section class="payment-detail" data-payment-panel="Transfer Bank" hidden>
               <h3>Transfer ke SeaBank</h3>
               <div class="provider-options">
-                <label><input type="radio" name="bank-provider" value="SeaBank" data-provider-option><span><strong>SeaBank</strong><small>No. rekening: 901318468036</small></span></label>
+                <label><input type="radio" name="bank-provider" value="SeaBank"
+                    data-provider-option><span><strong>SeaBank</strong><small>No. rekening:
+                      901318468036</small></span></label>
               </div>
-              <p class="payment-next-step">Setelah memilih SeaBank, lanjutkan konfirmasi dan pembayaran melalui WhatsApp.</p>
+              <p class="payment-next-step">Setelah memilih SeaBank, lanjutkan konfirmasi dan pembayaran melalui
+                WhatsApp.</p>
             </section>
             <section class="payment-detail" data-payment-panel="E-Wallet" hidden>
               <h3>Pilih e-wallet tujuan</h3>
               <div class="provider-options wallet-options">
-                <label><input type="radio" name="wallet-provider" value="DANA" data-provider-option><span><strong>DANA</strong><small>+62 852-3649-6518</small></span></label>
-                <label><input type="radio" name="wallet-provider" value="GoPay" data-provider-option><span><strong>GoPay</strong><small>+62 852-3649-6518</small></span></label>
-                <label><input type="radio" name="wallet-provider" value="SPay" data-provider-option><span><strong>SPay</strong><small>+62 852-3649-6518</small></span></label>
+                <label><input type="radio" name="wallet-provider" value="DANA"
+                    data-provider-option><span><strong>DANA</strong><small>+62 852-3649-6518</small></span></label>
+                <label><input type="radio" name="wallet-provider" value="GoPay"
+                    data-provider-option><span><strong>GoPay</strong><small>+62 852-3649-6518</small></span></label>
+                <label><input type="radio" name="wallet-provider" value="SPay"
+                    data-provider-option><span><strong>SPay</strong><small>+62 852-3649-6518</small></span></label>
               </div>
-              <p class="payment-next-step">Setelah memilih e-wallet, lanjutkan konfirmasi dan pembayaran melalui WhatsApp.</p>
+              <p class="payment-next-step">Setelah memilih e-wallet, lanjutkan konfirmasi dan pembayaran melalui
+                WhatsApp.</p>
             </section>
           </div>
         </section>
@@ -161,7 +230,8 @@
             <span class="support-icon" aria-hidden="true">♡</span>
             <div>
               <h2>Butuh bantuan?</h2>
-              <p>Tim Veluna siap membantu.</p><a href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi kami <span aria-hidden="true">→</span></a>
+              <p>Tim Veluna siap membantu.</p><a href="https://wa.me/6738386518" target="_blank"
+                rel="noopener noreferrer">Hubungi kami <span aria-hidden="true">→</span></a>
             </div>
           </section>
           <section class="order-card" aria-labelledby="order-heading">
@@ -174,6 +244,13 @@
               <div><span>Metode</span><strong>Vilog</strong></div>
               <div><span>Nominal</span><strong data-selected-nominal>—</strong></div>
               <div><span>Username</span><strong data-selected-username>—</strong></div>
+              <div><span>Password</span><strong data-selected-password>—</strong></div>
+
+              <div class="order-notes" data-order-notes hidden>
+                <span>Catatan</span>
+                <div data-selected-notes></div>
+              </div>
+
               <div><span>Pembayaran</span><strong data-selected-payment>—</strong></div>
               <div class="order-total"><span>Total</span><strong data-selected-price>—</strong></div>
             </div>
@@ -189,9 +266,11 @@
         <h2>Robux Vilog</h2>
         <p>1. Metode ini adalah Via Login, jadi kamu tetap <b>perlu memberikan password Roblox</b>. Namun, demi keamanan
           akunmu, password <b>TIDAK DIISI DI WEBSITE INI.</b><br>
-          2. Di website, kamu <b>cukup mengisi Username Roblox</b>. Password dikirim langsung ke WhatsApp pribadi Kak Veluna
+          2. Di website, kamu <b>cukup mengisi Username Roblox</b>. Password dikirim langsung ke WhatsApp pribadi Kak
+          Veluna
           bersama format pesanan.<br>
-          3. Pastikan akunmu tidak terkunci verifikasi 2 langkah (2FA), atau bisa siapkan kode backup saat Kak Veluna mulai
+          3. Pastikan akunmu tidak terkunci verifikasi 2 langkah (2FA), atau bisa siapkan kode backup saat Kak Veluna
+          mulai
           memproses pesananmu di WhatsApp.<br>
           4. Setelah pesanan selesai, sebaiknya segera ganti password Roblox kamu agar akunmu tetap aman.<br></p>
       </section>
@@ -202,9 +281,11 @@
     <div class="order-confirm-content">
       <p class="eyebrow">PERIKSA KEMBALI</p>
       <h2 id="order-confirm-title">Konfirmasi pesanan</h2>
-      <p class="confirm-intro">Pastikan detail pesanan sudah benar. WhatsApp akan dibuka dengan pilihan pembayaran yang sudah disiapkan.</p>
+      <p class="confirm-intro">Pastikan detail pesanan sudah benar. WhatsApp akan dibuka dengan pilihan pembayaran yang
+        sudah disiapkan.</p>
       <dl class="confirm-summary" data-confirm-summary></dl>
-      <p class="confirm-security">Pembayaran dilanjutkan melalui WhatsApp. Jangan kirim kata sandi atau kode OTP Roblox.</p>
+      <p class="confirm-security">Pembayaran dilanjutkan melalui WhatsApp. Jangan kirim kata sandi atau kode OTP Roblox.
+      </p>
       <div class="confirm-actions">
         <button class="confirm-cancel" type="button" data-confirm-cancel>Kembali</button>
         <button class="confirm-submit" type="button" data-confirm-submit>Konfirmasi & buka WhatsApp</button>
@@ -215,13 +296,18 @@
   <footer class="site-footer" id="tentang">
     <div class="footer-main page-width">
       <div class="footer-about">
-        <a class="brand footer-brand" href="#"><img class="brand-mark" src="image/iconvelunabulat.png" alt="">VELUNA<span>STORE</span></a>
+        <a class="brand footer-brand" href="#"><img class="brand-mark" src="image/iconvelunabulat.png"
+            alt="">VELUNA<span>STORE</span></a>
         <p>Temukan produk pilihan dan pengalaman belanja yang menyenangkan hanya di Veluna Store.</p>
-        <div class="social-links" aria-label="Media sosial"><a href="https://www.instagram.com/velunaidd/" aria-label="Instagram">ig</a><a href="https://www.tiktok.com/@velunaid?lang=id-ID" aria-label="TikTok">tk</a><a href="https://www.facebook.com/share/1DvF4zoCWN/" aria-label="Facebook">fb</a></div>
+        <div class="social-links" aria-label="Media sosial"><a href="https://www.instagram.com/velunaidd/"
+            aria-label="Instagram">ig</a><a href="https://www.tiktok.com/@velunaid?lang=id-ID"
+            aria-label="TikTok">tk</a><a href="https://www.facebook.com/share/1DvF4zoCWN/" aria-label="Facebook">fb</a>
+        </div>
       </div>
       <div class="footer-column">
         <h2>Bantuan</h2>
-        <a href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi kami</a><a href="#cara-order" data-order-guide>Cara Order</a>
+        <a href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi kami</a><a
+          href="#cara-order" data-order-guide>Cara Order</a>
       </div>
       <div class="footer-column">
         <h2>Informasi</h2>
@@ -232,7 +318,10 @@
         <p>Dapatkan kabar terbaru dan penawaran pilihan dari kami.</p>
       </div>
     </div>
-    <div class="footer-bottom page-width"><p>© 2026 Veluna Store. Hak cipta dilindungi.</p><p>Dibuat dengan sepenuh hati oleh Danielle <span aria-hidden="true">♡</span></p></div>
+    <div class="footer-bottom page-width">
+      <p>© 2026 Veluna Store. Hak cipta dilindungi.</p>
+      <p>Dibuat dengan sepenuh hati oleh Danielle <span aria-hidden="true">♡</span></p>
+    </div>
   </footer>
   <script src="site-loader.js"></script>
   <script src="music-player.js"></script>

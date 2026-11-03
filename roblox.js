@@ -4,9 +4,73 @@ const orderEmpty = document.querySelector("[data-order-empty]");
 const orderDetails = document.querySelector("[data-order-details]");
 const selectedNominal = document.querySelector("[data-selected-nominal]");
 const selectedUsername = document.querySelector("[data-selected-username]");
+const selectedPassword = document.querySelector("[data-selected-password]");
 const selectedPrice = document.querySelector("[data-selected-price]");
 const selectedPayment = document.querySelector("[data-selected-payment]");
 const checkoutMessage = document.querySelector("[data-checkout-message]");
+
+const passwordInput = document.getElementById("roblox-password");
+const togglePassword = document.getElementById("toggle-password");
+
+if (passwordInput && togglePassword) {
+  togglePassword.addEventListener("click", () => {
+    const isPasswordHidden = passwordInput.type === "password";
+
+    passwordInput.type = isPasswordHidden ? "text" : "password";
+
+    togglePassword.setAttribute(
+      "aria-label",
+      isPasswordHidden ? "Sembunyikan password" : "Tampilkan password",
+    );
+
+    togglePassword.setAttribute("aria-pressed", String(isPasswordHidden));
+  });
+}
+
+const noteInputs = [
+  document.querySelector("#note-1"),
+  document.querySelector("#note-2"),
+  document.querySelector("#note-3"),
+];
+
+function getOrderNotes() {
+  return noteInputs
+    .map((input, index) => ({
+      label: `Catatan ${index + 1}`,
+      value: input?.value.trim() || "",
+    }))
+    .filter((note) => note.value !== "");
+}
+
+function updateOrderNotes() {
+  const notes = getOrderNotes();
+  const notesContainer = document.querySelector("[data-order-notes]");
+  const notesContent = document.querySelector("[data-selected-notes]");
+
+  if (!notesContainer || !notesContent) return;
+
+  notesContainer.hidden = notes.length === 0;
+
+  notesContent.innerHTML = notes
+    .map(
+      (note) => `
+      <div>
+        <strong>${note.label}:</strong>
+        <span></span>
+      </div>
+    `,
+    )
+    .join("");
+
+  notesContent.querySelectorAll("span").forEach((span, index) => {
+    span.textContent = notes[index].value;
+  });
+}
+
+noteInputs.forEach((input) => {
+  input?.addEventListener("input", updateOrderNotes);
+});
+
 const paymentOptions = Array.from(
   document.querySelectorAll("[data-payment-option]"),
 );
@@ -65,6 +129,8 @@ const setPaymentPanels = () => {
 
 const updateOrderSummary = () => {
   const username = usernameInput.value.trim();
+  const password = passwordInput?.value.trim();
+
   checkoutButton.disabled = !isOrderComplete();
 
   if (!selectedOption) {
@@ -75,14 +141,20 @@ const updateOrderSummary = () => {
 
   orderEmpty.hidden = true;
   orderDetails.hidden = false;
+
   selectedNominal.textContent = `${Number(selectedOption.dataset.nominal).toLocaleString("id-ID")} Robux`;
+
   selectedUsername.textContent = username || "Belum diisi";
+  selectedPassword.textContent = password || "Belum diisi";
+
   selectedPrice.textContent = formatRupiah(
     Number(selectedOption.dataset.price),
   );
-  if (selectedPayment)
+
+  if (selectedPayment) {
     selectedPayment.textContent =
       getSelectedPayment() || "Pilih metode pembayaran";
+  }
 };
 
 const addConfirmationRow = (label, value) => {
@@ -121,6 +193,11 @@ nominalOptions.forEach((option) => {
 });
 
 usernameInput.addEventListener("input", () => {
+  checkoutMessage.textContent = "";
+  updateOrderSummary();
+});
+
+passwordInput?.addEventListener("input", () => {
   checkoutMessage.textContent = "";
   updateOrderSummary();
 });
