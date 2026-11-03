@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pesan Weekly Diamond Pass atau top up Diamond Mobile Legends di Veluna Store.">
+  <title>Top Up Mobile Legends - Veluna Store</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="roblox.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-top page-width">
+      <a class="brand" href="index.html" aria-label="Veluna Store beranda">VELUNA<span>STORE</span></a>
+      <form class="search" role="search" action="index.html" method="get">
+        <label class="sr-only" for="site-search">Cari produk</label>
+        <input id="site-search" type="search" name="q" placeholder="Cari produk favoritmu..." autocomplete="off">
+        <button type="submit" aria-label="Cari">⌕</button>
+      </form>
+      <div class="header-actions">
+        <a class="whatsapp-link" href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi via WhatsApp</a>
+      </div>
+    </div>
+    <nav class="main-nav page-width" aria-label="Navigasi utama">
+      <a href="index.html">Beranda</a>
+      <a class="active" href="index.html#produk">Produk</a>
+      <a href="index.html#kategori">Kategori</a>
+      <a href="index.html#tentang">Tentang Kami</a>
+      <a href="index.html#bantuan">Bantuan</a>
+    </nav>
+  </header>
+
+  <main class="roblox-page">
+    <div class="page-width">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="index.html">Beranda</a><span aria-hidden="true">/</span>
+        <a href="index.html#produk">Game</a><span aria-hidden="true">/</span>
+        <span aria-current="page">Mobile Legends</span>
+      </nav>
+
+      <section class="roblox-banner ml-banner" aria-label="Top up Mobile Legends">
+        <div class="roblox-banner-copy">
+          <p class="eyebrow">TOP UP MOBILE LEGENDS</p>
+          <h1>DIAMOND</h1>
+          <p>Isi data akun, pilih Weekly Diamond Pass atau top up Diamond, lalu lanjutkan konfirmasi pesanan melalui WhatsApp.</p>
+        </div>
+        <div class="roblox-banner-art">
+          <img class="game-mark ml-page-mark game-logo" src="image/iconml.png" alt="Ikon Mobile Legends">
+        </div>
+        <span class="banner-orbit orbit-one" aria-hidden="true"></span>
+        <span class="banner-orbit orbit-two" aria-hidden="true"></span>
+      </section>
+
+      <section class="game-overview" aria-labelledby="game-title">
+        <div class="game-cover ml-game-cover">
+          <img class="game-mark game-logo" src="image/iconml.png" alt="Ikon Mobile Legends">
+        </div>
+        <div class="game-overview-copy">
+          <p class="eyebrow">LAYANAN TOP UP</p>
+          <h2 id="game-title">Mobile Legends</h2>
+          <p class="publisher">Weekly Diamond Pass · Top up Diamond</p>
+          <div class="service-points">
+            <span><b aria-hidden="true">✓</b> Pakai User ID & Server</span>
+            <span><b aria-hidden="true">♡</b> Mudah</span>
+            <span><b aria-hidden="true">✦</b> Konfirmasi via WhatsApp</span>
+          </div>
+        </div>
+      </section>
+
+      <div class="purchase-layout">
+        <section class="purchase-card" aria-labelledby="purchase-heading">
+          <div class="step-heading">
+            <span>1</span>
+            <h2 id="purchase-heading">1. Masukkan data akun</h2>
+          </div>
+          <div class="nominal-content ml-purchase-content">
+            <p class="nominal-note">Pastikan User ID dan Zone ID (Server) benar sebelum membuat pesanan. Kami tidak meminta kata sandi atau kode OTP.</p>
+            <div class="ml-account-fields">
+              <div class="account-field">
+                <label for="ml-user-id">User ID</label>
+                <input id="ml-user-id" type="text" inputmode="numeric" pattern="[0-9]+" autocomplete="off" placeholder="Contoh: 12345678" required>
+              </div>
+              <div class="account-field">
+                <label for="ml-server-id">Zone ID (Server)</label>
+                <input id="ml-server-id" type="text" inputmode="numeric" pattern="[0-9]+" autocomplete="off" placeholder="Contoh: 1234" required>
+              </div>
+            </div>
+
+            <fieldset class="ml-product-field">
+              <legend>2. Pilih jenis produk</legend>
+              <div class="ml-product-options">
+                <label class="ml-product-option">
+                  <input type="radio" name="ml-product-type" value="Weekly Diamond Pass" data-ml-product>
+                  <span><strong>Weekly Diamond Pass</strong><small>5 pilihan paket</small></span>
+                </label>
+                <label class="ml-product-option">
+                  <input type="radio" name="ml-product-type" value="Top up Diamond" data-ml-product>
+                  <span><strong>Top up Diamond</strong><small>10 pilihan paket</small></span>
+                </label>
+              </div>
+            </fieldset>
+
+            <section class="ml-package-section" data-package-section="Weekly Diamond Pass" hidden>
+              <h3>Pilih paket Weekly Diamond Pass</h3>
+              <div class="nominal-grid ml-package-grid">
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="1x Weekly Diamond Pass">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">W</span><span class="nominal-details"><strong>1x Weekly Diamond Pass</strong><small>Weekly Diamond Pass</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="2x Weekly Diamond Pass">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">W</span><span class="nominal-details"><strong>2x Weekly Diamond Pass</strong><small>Weekly Diamond Pass</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="3x Weekly Diamond Pass">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">W</span><span class="nominal-details"><strong>3x Weekly Diamond Pass</strong><small>Weekly Diamond Pass</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="4x Weekly Diamond Pass">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">W</span><span class="nominal-details"><strong>4x Weekly Diamond Pass</strong><small>Weekly Diamond Pass</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="5x Weekly Diamond Pass">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">W</span><span class="nominal-details"><strong>5x Weekly Diamond Pass</strong><small>Weekly Diamond Pass</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+              </div>
+            </section>
+
+            <section class="ml-package-section" data-package-section="Top up Diamond" hidden>
+              <h3>Pilih paket Diamond</h3>
+              <div class="nominal-grid ml-package-grid">
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="5 Diamond">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">D</span><span class="nominal-details"><strong>5 Diamond</strong><small>Top up Diamond</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="11 Diamond">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">D</span><span class="nominal-details"><strong>11 Diamond</strong><small>Top up Diamond</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="22 Diamond">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">D</span><span class="nominal-details"><strong>22 Diamond</strong><small>Top up Diamond</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="56 Diamond">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">D</span><span class="nominal-details"><strong>56 Diamond</strong><small>Top up Diamond</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="112 Diamond">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">D</span><span class="nominal-details"><strong>112 Diamond</strong><small>Top up Diamond</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="172 Diamond">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">D</span><span class="nominal-details"><strong>172 Diamond</strong><small>Top up Diamond</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="257 Diamond">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">D</span><span class="nominal-details"><strong>257 Diamond</strong><small>Top up Diamond</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="344 Diamond">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">D</span><span class="nominal-details"><strong>344 Diamond</strong><small>Top up Diamond</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="429 Diamond">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">D</span><span class="nominal-details"><strong>429 Diamond</strong><small>Top up Diamond</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+                <button class="nominal-option ml-package-option" type="button" data-ml-package data-package-name="514 Diamond">
+                  <span class="robux-icon ml-package-icon" aria-hidden="true">D</span><span class="nominal-details"><strong>514 Diamond</strong><small>Top up Diamond</small></span><b class="nominal-price">Harga menyusul</b>
+                </button>
+              </div>
+            </section>
+            <p class="ml-price-note">Harga akan dikonfirmasi admin melalui WhatsApp sebelum pembayaran.</p>
+
+            <fieldset class="payment-field">
+              <legend>3. Pilih pembayaran</legend>
+              <label><input type="radio" name="payment-method" value="QRIS" data-payment-option> QRIS</label>
+              <label><input type="radio" name="payment-method" value="Transfer Bank" data-payment-option> Transfer Bank</label>
+              <label><input type="radio" name="payment-method" value="E-Wallet" data-payment-option> E-Wallet</label>
+            </fieldset>
+            <section class="payment-detail" data-payment-panel="QRIS" hidden>
+              <h3>Pembayaran QRIS</h3>
+              <figure class="qris-image"><img src="image/qris.jpeg" alt="Kode QRIS untuk pembayaran Veluna"><figcaption>Pindai kode QRIS ini setelah admin mengonfirmasi total pesanan melalui WhatsApp.</figcaption></figure>
+            </section>
+            <section class="payment-detail" data-payment-panel="Transfer Bank" hidden>
+              <h3>Transfer ke SeaBank</h3>
+              <div class="provider-options">
+                <label><input type="radio" name="bank-provider" value="SeaBank" data-provider-option><span><strong>SeaBank</strong><small>No. rekening: 901318468036</small></span></label>
+              </div>
+              <p class="payment-next-step">Pilih SeaBank. Detail pembayaran dan konfirmasi dilanjutkan melalui WhatsApp.</p>
+            </section>
+            <section class="payment-detail" data-payment-panel="E-Wallet" hidden>
+              <h3>Pilih e-wallet tujuan</h3>
+              <div class="provider-options wallet-options">
+                <label><input type="radio" name="wallet-provider" value="DANA" data-provider-option><span><strong>DANA</strong><small>+62 852-3649-6518</small></span></label>
+                <label><input type="radio" name="wallet-provider" value="GoPay" data-provider-option><span><strong>GoPay</strong><small>+62 852-3649-6518</small></span></label>
+                <label><input type="radio" name="wallet-provider" value="SPay" data-provider-option><span><strong>SPay</strong><small>+62 852-3649-6518</small></span></label>
+              </div>
+              <p class="payment-next-step">Pilih e-wallet. Detail pembayaran dan konfirmasi dilanjutkan melalui WhatsApp.</p>
+            </section>
+          </div>
+        </section>
+
+        <aside class="purchase-aside">
+          <section class="support-card">
+            <span class="support-icon" aria-hidden="true">♡</span>
+            <div>
+              <h2>Butuh bantuan?</h2>
+              <p>Tim Veluna siap membantu.</p>
+              <a href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi kami <span aria-hidden="true">→</span></a>
+            </div>
+          </section>
+          <section class="order-card" aria-labelledby="order-heading">
+            <h2 id="order-heading">Ringkasan pesanan</h2>
+            <div class="order-empty" data-order-empty>
+              <span class="empty-icon" aria-hidden="true">◇</span>
+              <p>Lengkapi data akun dan pilihan produk untuk melihat ringkasan.</p>
+            </div>
+            <div class="order-details" data-order-details hidden>
+              <div><span>Game</span><strong>Mobile Legends</strong></div>
+              <div><span>User ID</span><strong data-selected-user-id>—</strong></div>
+              <div><span>Zone ID</span><strong data-selected-server-id>—</strong></div>
+              <div><span>Produk</span><strong data-selected-product>—</strong></div>
+              <div><span>Pembayaran</span><strong data-selected-payment>—</strong></div>
+              <div class="order-total"><span>Total</span><strong data-selected-price>Dikonfirmasi admin</strong></div>
+            </div>
+            <button class="checkout-button" type="button" data-checkout disabled>Buat pesanan via WhatsApp</button>
+            <p class="checkout-message" data-checkout-message role="status" aria-live="polite"></p>
+            <p class="demo-note">Total harga dikonfirmasi admin di WhatsApp.</p>
+          </section>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <dialog class="order-confirm-dialog" aria-labelledby="order-confirm-title" data-order-confirm-dialog>
+    <div class="order-confirm-content">
+      <p class="eyebrow">PERIKSA KEMBALI</p>
+      <h2 id="order-confirm-title">Konfirmasi pesanan</h2>
+      <p class="confirm-intro">Pastikan data akun dan pesanan sudah benar. WhatsApp akan dibuka untuk konfirmasi harga dan pembayaran.</p>
+      <dl class="confirm-summary" data-confirm-summary></dl>
+      <p class="confirm-security">Jangan kirim kata sandi atau kode OTP Mobile Legends.</p>
+      <div class="confirm-actions">
+        <button class="confirm-cancel" type="button" data-confirm-cancel>Kembali</button>
+        <button class="confirm-submit" type="button" data-confirm-submit>Konfirmasi & buka WhatsApp</button>
+      </div>
+    </div>
+  </dialog>
+
+  <footer class="site-footer">
+    <div class="footer-main page-width">
+      <div class="footer-about">
+        <a class="brand footer-brand" href="index.html">VELUNA<span>STORE</span></a>
+        <p>Temukan produk pilihan dan pengalaman belanja yang menyenangkan hanya di Veluna Store.</p>
+        <div class="social-links" aria-label="Media sosial"><a href="#" aria-label="Instagram">ig</a><a href="#" aria-label="TikTok">tk</a><a href="#" aria-label="Facebook">fb</a></div>
+      </div>
+      <div class="footer-column">
+        <h2>Jelajahi</h2>
+        <a href="index.html#produk">Semua produk</a><a href="index.html#kategori">Kategori</a><a href="index.html#tentang">Tentang kami</a>
+      </div>
+      <div class="footer-column">
+        <h2>Bantuan</h2>
+        <a href="https://wa.me/6738386518" target="_blank" rel="noopener noreferrer">Hubungi kami</a><a href="index.html#bantuan">Cara berbelanja</a><a href="index.html#bantuan">FAQ</a>
+      </div>
+      <div class="footer-column newsletter">
+        <h2>Kabar Veluna</h2>
+        <p>Dapatkan kabar terbaru dari kami.</p>
+        <form><label class="sr-only" for="email">Alamat email</label><input id="email" type="email" placeholder="Alamat email"><button type="submit" aria-label="Daftar">→</button></form>
+      </div>
+    </div>
+    <div class="footer-bottom page-width"><p>© 2026 Veluna Store. Hak cipta dilindungi.</p><p>Dibuat dengan sepenuh hati <span aria-hidden="true">♡</span></p></div>
+  </footer>
+  <script src="mobile-legends.js"></script>
+</body>
+</html>

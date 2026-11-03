@@ -218,8 +218,6 @@ confirmationDialog
       `୨୧ Nominal: ${formatNumber(nominal)} Robux`,
       `୨୧ Pembayaran: ${payment}`,
       "",
-      "━━━━━━━━━━━━━━",
-      "",
       "💌 *TOTAL PEMBAYARAN*",
       `*${formatMoney(total)}*`,
       "",

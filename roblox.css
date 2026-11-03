@@ -4,25 +4,58 @@
 .breadcrumbs span:last-child { color: var(--ink); font-weight: 600; }
 
 .roblox-banner { position: relative; min-height: 235px; display: flex; align-items: center; overflow: hidden; border: 1px solid rgb(86 132 184 / 17%); border-radius: 12px; background: linear-gradient(110deg, #dceaf7 0%, #e8eef8 50%, #f8e6ed 100%); isolation: isolate; }
+.roblox-banner::before { position: absolute; z-index: -1; inset: -16px; background: linear-gradient(110deg, rgb(220 234 247 / 58%), rgb(232 238 248 / 55%) 50%, rgb(248 230 237 / 58%)), url("image/iconroblox.png") no-repeat 88% 50% / 280px; content: ""; filter: blur(1px) saturate(.78); opacity: .72; }
 .vilog-banner { background: linear-gradient(110deg, #e6e9f8 0%, #e9eef8 50%, #f8e6ed 100%); }
 .vilog-banner .roblox-symbol { color: #806da7; }
 .vilog-cover { background: linear-gradient(145deg, #e8e8f7, #f8e9ef); }
 .vilog-cover .roblox-symbol { color: #806da7; }
-.roblox-banner-copy { position: relative; z-index: 1; width: 58%; padding: 32px 48px; }
+.roblox-banner-copy { position: relative; z-index: 2; width: 58%; padding: 32px 48px; }
 .roblox-banner-copy .eyebrow { color: var(--accent-dark); }
 .roblox-banner h1 { margin: 0; color: #315d8a; font-size: clamp(42px, 7vw, 76px); font-weight: 800; letter-spacing: 3px; line-height: 1; }
 .roblox-banner-copy > p:last-child { max-width: 400px; margin: 15px 0 0; color: #5f7389; font-size: 13px; line-height: 1.7; }
-.roblox-banner-art { position: absolute; inset: 0 0 0 auto; width: 43%; display: grid; place-items: center; overflow: hidden; background: repeating-linear-gradient(135deg, rgb(86 132 184 / 5%) 0 1px, transparent 1px 18px); }
+.roblox-banner-art { position: absolute; z-index: 1; inset: 0 0 0 auto; width: 43%; display: grid; place-items: center; overflow: hidden; background: repeating-linear-gradient(135deg, rgb(86 132 184 / 5%) 0 1px, transparent 1px 18px); }
 .roblox-banner-art .image-label { position: absolute; bottom: 17px; color: #7892ad; font-size: 10px; }
 .roblox-symbol { position: relative; z-index: 1; width: 112px; height: 112px; display: grid; place-items: center; border: 1px solid rgb(255 255 255 / 90%); border-radius: 27px; background: linear-gradient(145deg, rgb(255 255 255 / 80%), rgb(255 255 255 / 48%)); box-shadow: 0 14px 35px rgb(54 95 141 / 13%); color: #5684b8; font-size: 64px; font-weight: 800; transform: rotate(-8deg); }
+.roblox-symbol.game-logo { display: block; border: 0; border-radius: 20px; background: transparent; object-fit: cover; transform: none; }
 .banner-orbit { position: absolute; z-index: -1; width: 215px; height: 215px; border: 1px solid rgb(86 132 184 / 15%); border-radius: 50%; }
 .orbit-one { top: -98px; right: 12%; box-shadow: 0 0 0 25px rgb(255 255 255 / 12%); }
 .orbit-two { right: 25%; bottom: -155px; width: 270px; height: 270px; border-color: rgb(234 168 191 / 32%); }
 
 .game-overview { position: relative; z-index: 1; min-height: 124px; display: flex; align-items: center; gap: 23px; margin: -1px 0 24px; padding: 17px 22px 17px 24px; border: 1px solid #e3eaf1; border-radius: 0 0 10px 10px; background: rgb(255 255 255 / 94%); box-shadow: 0 8px 22px rgb(52 79 107 / 5%); }
 .game-cover { position: relative; width: 96px; height: 96px; flex: 0 0 auto; display: grid; place-items: center; overflow: hidden; border: 1px solid #dce8f3; border-radius: 10px; background: linear-gradient(145deg, #e0edf8, #f8e9ef); }
+.game-cover::before { position: absolute; inset: -8px; background: linear-gradient(145deg, rgb(224 237 248 / 65%), rgb(248 233 239 / 65%)), url("image/iconroblox.png") center / cover no-repeat; content: ""; filter: blur(1.5px) saturate(.78); opacity: .72; }
+.game-cover > img { z-index: 1; }
 .game-cover .roblox-symbol { width: 48px; height: 48px; border-radius: 13px; font-size: 30px; }
+.game-cover .roblox-symbol.game-logo { border-radius: 10px; box-shadow: 0 5px 13px rgb(54 95 141 / 12%); }
 .game-cover .image-label { position: absolute; right: 3px; bottom: 5px; left: 3px; color: #8193a6; font-size: 7px; text-align: center; }
+.ml-banner { background: linear-gradient(110deg, #dceaf7 0%, #e8eff8 50%, #f8e6ed 100%); }
+.ml-banner::before { background-image: linear-gradient(110deg, rgb(220 234 247 / 56%), rgb(232 239 248 / 52%) 50%, rgb(248 230 237 / 56%)), url("image/iconml.png"); background-position: center, 88% 50%; background-size: auto, 330px; filter: blur(1.5px) saturate(.72); opacity: .76; }
+.ml-page-mark { width: 92px; height: 92px; border-radius: 24px; font-size: 31px; }
+.ml-page-mark.game-logo { border-radius: 20px; box-shadow: 0 14px 35px rgb(54 95 141 / 15%); }
+.ml-game-cover { background: linear-gradient(145deg, #e0edf8, #f8e9ef); }
+.ml-game-cover::before { background-image: linear-gradient(145deg, rgb(224 237 248 / 62%), rgb(248 233 239 / 64%)), url("image/iconml.png"); filter: blur(1.5px) saturate(.7); }
+.ml-game-cover .game-mark { width: 48px; height: 48px; border-radius: 13px; font-size: 20px; }
+.ml-game-cover .game-mark.game-logo { border-radius: 9px; box-shadow: 0 5px 13px rgb(54 95 141 / 12%); }
+.ml-game-cover .image-label { position: absolute; right: 3px; bottom: 5px; left: 3px; color: #8193a6; font-size: 7px; text-align: center; }
+.ml-account-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.ml-account-fields .account-field { margin-top: 0; }
+.ml-product-field { display: grid; gap: 10px; margin: 20px 0 0; padding: 0; border: 0; }
+.ml-product-field legend { margin-bottom: 9px; color: #405d7a; font-size: 11px; font-weight: 700; }
+.ml-product-options { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.ml-product-option { min-height: 72px; display: flex; align-items: flex-start; gap: 9px; padding: 13px; border: 1px solid #e1e9f1; border-radius: 8px; background: #fbfcfe; color: #637a91; cursor: pointer; transition: border-color 180ms ease, background 180ms ease, transform 180ms ease; }
+.ml-product-option:hover { transform: translateY(-2px); border-color: #9db9d3; }
+.ml-product-option:has(input:checked) { border-color: #5684b8; background: #edf5fc; }
+.ml-product-option input { margin: 2px 0 0; accent-color: #5684b8; }
+.ml-product-option span { display: grid; gap: 5px; }
+.ml-product-option strong { color: #405d7a; font-size: 11px; }
+.ml-product-option small { color: #8794a2; font-size: 9px; line-height: 1.5; }
+.ml-package-section { margin-top: 20px; }
+.ml-package-section h3 { margin: 0 0 11px; color: #405d7a; font-size: 11px; }
+.ml-package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.ml-package-option { min-width: 0; }
+.ml-package-option[aria-pressed="true"] { border-color: #5684b8; background: linear-gradient(130deg, #edf5fc, #fff8f8); box-shadow: 0 0 0 2px rgb(86 132 184 / 12%); }
+.ml-package-icon { font-size: 15px; }
+.ml-price-note { margin: 12px 0 0; color: #71869b; font-size: 10px; line-height: 1.6; }
 .game-overview-copy h2 { margin: 0; color: #344f6b; font-size: 17px; text-transform: uppercase; }
 .game-overview-copy .eyebrow { margin-bottom: 5px; font-size: 9px; }
 .publisher { margin: 5px 0 10px; color: var(--muted); font-size: 11px; }
@@ -167,6 +200,8 @@
   .order-card { grid-column: 1 / -1; }
   .nominal-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
   .nominal-option { min-height: 70px; flex-wrap: wrap; gap: 7px; padding: 9px; }
+  .ml-account-fields, .ml-product-options { grid-template-columns: 1fr; }
+  .ml-package-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .nominal-price { width: calc(100% - 42px); margin-left: 42px; }
   .rating-content { flex-wrap: wrap; }
   .rating-content strong { font-size: 33px; }
