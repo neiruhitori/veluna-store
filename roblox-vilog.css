@@ -84,7 +84,9 @@
 .nominal-details { min-width: 0; display: grid; gap: 4px; }
 .nominal-details strong { font-size: 11px; }
 .nominal-details small { color: #8b97a4; font-size: 9px; }
-.nominal-price { margin-left: auto; color: #bd6584; font-size: 10px; white-space: nowrap; }
+.nominal-price { display: grid; justify-items: end; gap: 3px; margin-left: auto; color: #bd6584; font-size: 10px; white-space: nowrap; }
+.nominal-price del { color: #8b97a4; font-size: 9px; }
+.nominal-price b { color: #bd6584; font-size: 10px; }
 .account-field { display: grid; gap: 7px; margin-top: 20px; }
 .account-field label { color: #405d7a; font-size: 11px; font-weight: 700; }
 .account-field input { min-height: 42px; padding: 0 12px; border: 1px solid #dfe7ef; border-radius: 6px; outline: 0; background: #fff; color: var(--ink); font-size: 12px; }
@@ -436,5 +438,4 @@
     min-height: 55px;
   }
 }
-
 
