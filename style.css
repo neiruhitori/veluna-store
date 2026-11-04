@@ -281,6 +281,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .about-dialog-note { margin: 17px 0 19px; font-size: 12px; }
 .about-dialog-done { border: 0; cursor: pointer; }
 .about-dialog-done span { font-size: 15px; }
+.update-group-dialog { position: relative; isolation: isolate; width: min(500px, calc(100% - 32px)); max-width: 500px; max-height: calc(100% - 32px); padding: 0; overflow: auto; border: 1px solid rgb(255 255 255 / 90%); border-radius: 22px; background: linear-gradient(145deg, #f8fbff, #fff8fb 62%, #fffdf6); color: var(--ink); box-shadow: 0 28px 90px rgb(39 52 76 / 28%); }
+.update-group-dialog[open] { animation: about-dialog-enter 260ms cubic-bezier(.2, .75, .25, 1) both; }
+.update-group-dialog::before { position: absolute; z-index: -1; inset: 0; background: url("image/iconveluna.png") no-repeat right -42px bottom -55px / 250px, radial-gradient(circle at 100% 0, rgb(197 220 243 / 50%) 0 120px, transparent 121px), radial-gradient(circle at 0 100%, rgb(247 218 231 / 48%) 0 150px, transparent 151px); content: ""; opacity: .22; pointer-events: none; }
+.update-group-dialog::backdrop { background: rgb(37 45 64 / 48%); backdrop-filter: blur(7px); }
+.update-group-dialog > .method-dialog-close { z-index: 1; top: 17px; right: 17px; }
+.update-group-content { position: relative; display: flex; flex-direction: column; align-items: flex-start; padding: 42px 38px 30px; }
+.update-group-content > .eyebrow { margin-bottom: 8px; color: #758da7; }
+.update-group-content h2 { max-width: 360px; margin: 0; color: #365f8d; font-size: clamp(25px, 5vw, 32px); line-height: 1.2; letter-spacing: -.7px; }
+.update-group-content > p:not(.eyebrow) { max-width: 390px; margin: 13px 0 23px; color: #69798b; font-size: 13px; line-height: 1.8; }
+.update-group-join { display: inline-flex; align-items: center; gap: 9px; border: 0; text-decoration: none; }
+.update-group-join span { font-size: 16px; }
+.update-group-dismiss { align-self: center; margin-top: 15px; padding: 5px 10px; border: 0; background: transparent; color: #71859a; font: inherit; font-size: 11px; cursor: pointer; }
+.update-group-dismiss:hover { color: #365f8d; text-decoration: underline; }
 .about-welcome-page { min-height: 520px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 38px 52px 34px; text-align: center; }
 .about-welcome-page[hidden] { display: none; }
 .welcome-art { position: relative; width: 150px; height: 150px; display: grid; place-items: center; margin-bottom: 19px; border: 1px solid rgb(255 255 255 / 90%); border-radius: 50%; background: radial-gradient(circle, rgb(255 255 255 / 92%) 0 42%, rgb(221 235 248 / 74%) 43% 67%, rgb(248 226 235 / 68%) 68%); box-shadow: 0 14px 40px rgb(68 88 122 / 12%), 0 0 0 14px rgb(255 255 255 / 45%); }
@@ -409,6 +422,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .about-values div { min-height: 0; display: grid; grid-template-columns: 30px 1fr; align-items: center; gap: 2px 9px; padding: 10px; }
   .about-values span { grid-row: 1 / span 2; }
   .about-dialog-note { margin-block: 14px; font-size: 11px; }
+  .update-group-content { padding: 38px 23px 24px; }
+  .update-group-content > p:not(.eyebrow) { font-size: 12px; }
   .order-guide-content { padding: 30px 21px 22px; }
   .order-guide-content > h2 { max-width: 300px; margin-top: 14px; font-size: 25px; }
   .order-guide-intro { font-size: 11px; }

@@ -281,3 +281,26 @@ if (velunaAboutDialog) {
   });
   velunaAboutDialog.addEventListener("close", showStoryPage);
 }
+
+const updateGroupDialog = document.querySelector("[data-update-group-dialog]");
+
+if (updateGroupDialog) {
+  updateGroupDialog
+    .querySelectorAll("[data-update-group-close]")
+    .forEach((button) => {
+      button.addEventListener("click", () => updateGroupDialog.close());
+    });
+  updateGroupDialog.addEventListener("click", (event) => {
+    if (event.target === updateGroupDialog) updateGroupDialog.close();
+  });
+
+  const showUpdateGroupDialog = () => {
+    window.setTimeout(() => updateGroupDialog.showModal(), 700);
+  };
+
+  if (document.readyState === "complete") {
+    showUpdateGroupDialog();
+  } else {
+    window.addEventListener("load", showUpdateGroupDialog, { once: true });
+  }
+}
