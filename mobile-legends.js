@@ -20,6 +20,7 @@ const selectedUserId = document.querySelector("[data-selected-user-id]");
 const selectedServerId = document.querySelector("[data-selected-server-id]");
 const selectedProduct = document.querySelector("[data-selected-product]");
 const selectedPayment = document.querySelector("[data-selected-payment]");
+const selectedPrice = document.querySelector("[data-selected-price]");
 const checkoutButton = document.querySelector("[data-checkout]");
 const confirmationDialog = document.querySelector(
   "[data-order-confirm-dialog]",
@@ -31,6 +32,13 @@ const getSelectedProduct = () =>
 
 const getSelectedPackage = () =>
   packageOptions.find((option) => option.getAttribute("aria-pressed") === "true");
+
+const formatRupiah = (amount) =>
+  new Intl.NumberFormat("id-ID", {
+    style: "currency",
+    currency: "IDR",
+    maximumFractionDigits: 0,
+  }).format(amount);
 
 const getSelectedPaymentOption = () =>
   paymentOptions.find((option) => option.checked);
@@ -80,6 +88,7 @@ const updateOrderSummary = () => {
   selectedUserId.textContent = userIdInput.value.trim() || "Belum diisi";
   selectedServerId.textContent = serverIdInput.value.trim() || "Belum diisi";
   selectedProduct.textContent = selectedPackage.dataset.packageName;
+  selectedPrice.textContent = formatRupiah(Number(selectedPackage.dataset.price));
   selectedPayment.textContent =
     getSelectedPayment() || "Pilih metode pembayaran";
 };
@@ -102,7 +111,10 @@ const showOrderConfirmation = () => {
   addConfirmationRow("Jenis produk", product.value);
   addConfirmationRow("Paket", selectedPackage.dataset.packageName);
   addConfirmationRow("Pembayaran", getSelectedPayment());
-  addConfirmationRow("Total", "Dikonfirmasi admin melalui WhatsApp");
+  addConfirmationRow(
+    "Total",
+    formatRupiah(Number(selectedPackage.dataset.price)),
+  );
   confirmationDialog.showModal();
 };
 
@@ -168,7 +180,7 @@ confirmationDialog
     const paymentInstructions = {
       QRIS: [
         "୨୧ *PEMBAYARAN QRIS*",
-        "Silakan scan QRIS pada halaman pembayaran setelah total dikonfirmasi admin.",
+        "Silakan scan QRIS pada halaman pembayaran sesuai total pesanan.",
       ].join("\n"),
       "Transfer Bank - SeaBank": [
         "୨୧ *PEMBAYARAN SEABANK*",
@@ -197,11 +209,11 @@ confirmationDialog
       `୨୧ Jenis produk: ${product.value}`,
       `୨୧ Paket: ${selectedPackage.dataset.packageName}`,
       `୨୧ Pembayaran: ${payment}`,
-      "୨୧ Total: Mohon konfirmasi harga",
+      `୨୧ Total: ${formatRupiah(Number(selectedPackage.dataset.price))}`,
       "",
       paymentInstruction,
       "",
-      "♡ Mohon konfirmasi total pembayaran dan pesanan saya.",
+      "♡ Mohon konfirmasi pesanan saya.",
       "♡ Setelah membayar, saya akan mengirim bukti pembayaran di chat ini.",
       "",
       "Terima kasih, Veluna! 🎀",
